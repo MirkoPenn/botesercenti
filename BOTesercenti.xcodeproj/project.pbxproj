@@ -35,8 +35,8 @@
 		10DBFEFF1F3BE35A00209DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10DBFF011F3BE35A00209DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10DBFF1C1F3BE35A00209DEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		10DBFF5D1F3BE3DB00209DEC /* Buddies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Buddies-Bridging-Header.h"; sourceTree = "<group>"; };
-		10DBFF5E1F3BE3DB00209DEC /* Buddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Buddies.entitlements; sourceTree = "<group>"; };
+		10DBFF5D1F3BE3DB00209DEC /* BOTesercenti-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BOTesercenti-Bridging-Header.h"; sourceTree = "<group>"; };
+		10DBFF5E1F3BE3DB00209DEC /* BOTesercenti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BOTesercenti.entitlements; sourceTree = "<group>"; };
 		17F849E6B5E2F6A58A89411A /* Pods_SparkBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		206281F61ED1782C007E28F9 /* BuBOTesercentiBOTesercentiies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuBOTesercentiBOTesercentiies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D2DF1C1F034A8A00902BF7 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
@@ -79,21 +79,21 @@
 			path = TextMarkDown;
 			sourceTree = "<group>";
 		};
-		10DBFEFD1F3BE35A00209DEC /* Buddies */ = {
+		10DBFEFD1F3BE35A00209DEC /* BOTesercenti */ = {
 			isa = PBXGroup;
 			children = (
-				10DBFF5E1F3BE3DB00209DEC /* Buddies.entitlements */,
+				10DBFF5E1F3BE3DB00209DEC /* BOTesercenti.entitlements */,
 				10DBFF0F1F3BE35A00209DEC /* Extentions */,
 				10DBFEFE1F3BE35A00209DEC /* AppDelegate.swift */,
 				10DBFF001F3BE35A00209DEC /* LaunchScreen.storyboard */,
-				10DBFF5D1F3BE3DB00209DEC /* Buddies-Bridging-Header.h */,
+				10DBFF5D1F3BE3DB00209DEC /* BOTesercenti-Bridging-Header.h */,
 				10DBFEFF1F3BE35A00209DEC /* Assets.xcassets */,
 				10DBFF1C1F3BE35A00209DEC /* Info.plist */,
 				ACB813F120B1AFE900B08E2A /* HomeViewController.swift */,
 				ACB813F020B1AFE900B08E2A /* LoginViewController.swift */,
 				ACB813F220B1AFE900B08E2A /* Main.storyboard */,
 			);
-			path = Buddies;
+			path = BOTesercenti;
 			sourceTree = "<group>";
 		};
 		10DBFF0F1F3BE35A00209DEC /* Extentions */ = {
@@ -107,7 +107,7 @@
 		206281ED1ED1782C007E28F9 = {
 			isa = PBXGroup;
 			children = (
-				10DBFEFD1F3BE35A00209DEC /* Buddies */,
+				10DBFEFD1F3BE35A00209DEC /* BOTesercenti */,
 				206281F71ED1782C007E28F9 /* Products */,
 				632FDA5C99417D1C18348308 /* Pods */,
 				49450FFA59942C9218CB08C7 /* Frameworks */,
@@ -432,18 +432,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Buddies/Buddies.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6824YNJ23L;
-				INFOPLIST_FILE = Buddies/Info.plist;
+				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Buddies/Buddies-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BOTesercenti/BOTesercenti-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -454,18 +454,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Buddies/Buddies.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6824YNJ23L;
-				INFOPLIST_FILE = Buddies/Info.plist;
+				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Buddies/Buddies-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BOTesercenti/BOTesercenti-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
