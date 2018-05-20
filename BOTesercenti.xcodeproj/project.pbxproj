@@ -18,7 +18,7 @@
 		2BB575EA30CFE25FC4FF3719 /* Pods_Buddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */; };
 		AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94245220B1CBA30060BDF9 /* KSLogger.swift */; };
 		ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F020B1AFE900B08E2A /* LoginViewController.swift */; };
-		ACB813F420B1AFE900B08E2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* HomeViewController.swift */; };
+		ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* ChatViewController.swift */; };
 		ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB813F220B1AFE900B08E2A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +47,7 @@
 		A5EC2689BD1510DCC34D6D20 /* Pods-SparkBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		AC94245220B1CBA30060BDF9 /* KSLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLogger.swift; sourceTree = "<group>"; };
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		ACB813F120B1AFE900B08E2A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		ACB813F220B1AFE900B08E2A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DB15DCABD7192B62340F0D4E /* Pods-Buddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Buddies/Pods-Buddies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 				10DBFF5D1F3BE3DB00209DEC /* BOTesercenti-Bridging-Header.h */,
 				10DBFEFF1F3BE35A00209DEC /* Assets.xcassets */,
 				10DBFF1C1F3BE35A00209DEC /* Info.plist */,
-				ACB813F120B1AFE900B08E2A /* HomeViewController.swift */,
+				ACB813F120B1AFE900B08E2A /* ChatViewController.swift */,
 				ACB813F020B1AFE900B08E2A /* LoginViewController.swift */,
 				ACB813F220B1AFE900B08E2A /* Main.storyboard */,
 				AC94245220B1CBA30060BDF9 /* KSLogger.swift */,
@@ -303,7 +303,7 @@
 				10372ED2208D6DBA000B9300 /* MessageParser.m in Sources */,
 				10372ED3208D6DBA000B9300 /* NSAttributedString+Extensions.m in Sources */,
 				10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */,
-				ACB813F420B1AFE900B08E2A /* HomeViewController.swift in Sources */,
+				ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */,
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
 				AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */,
 			);

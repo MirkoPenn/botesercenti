@@ -39,7 +39,7 @@ enum UserLoginType : Int {
 
 
 
-var rootController: HomeViewController?
+var rootController: ChatViewController?
 
 
 @UIApplicationMain

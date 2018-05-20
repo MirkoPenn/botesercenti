@@ -10,36 +10,41 @@ import UIKit
 import SparkSDK
 import Alamofire
 
-class HomeViewController: UIViewController {
+class ChatViewController: UIViewController, UITextFieldDelegate {
 
     var userId: String?
     
     var roomId: String?
     
+    @IBOutlet weak var messageLabel: UILabel!
+    
     @IBOutlet weak var welcomeLabel: UILabel!
+    
+    @IBOutlet weak var chatView: UIView!
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        sparkSDK?.people.getMe() {[weak self] response in
-            if let strongSelf = self {
-                switch response.result {
-                case .success(let person):
-                    self?.userId = person.id
-                    self?.welcomeLabel.text = "Welcome, \(person.displayName ?? "???")"
-                case .failure:
-                    self?.welcomeLabel.text = "Fetching user profile failed."
-                }
-            }
-        }
+        
+        chatView.isHidden = true
+        
+        textField.delegate = self
         
         sparkSDK?.phone.register({ (error) in
             if error == nil{
                 print("Phone registered")
+                self.chatView.isHidden = false
+                self.activityIndicator.isHidden = true
                 sparkSDK?.messages.onEvent = { event in
                     switch event{
                     case .messageReceived(let message):
+                        
                         print("\(message.personEmail): \(message.text)")
+                        self.messageLabel.text = message.text
+                        
                         break
                     case .messageDeleted(let _):
                         break
@@ -60,8 +65,9 @@ class HomeViewController: UIViewController {
     
     
     
-    @IBAction func sendMessage(_ sender: Any) {
-        sparkSDK!.messages.post(personEmail: EmailAddress.fromString("simon_pen@hotmail.it")!, text: "tattaaaaaaaa") { response in
+    
+    @IBAction func sendMessageButton(_ sender: Any) {
+        sparkSDK!.messages.post(personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, text: textField.text ?? "") { response in
             switch response.result {
             case .success(let message):
                 print("Sent! Message: \(message)")
@@ -71,71 +77,9 @@ class HomeViewController: UIViewController {
                 print("Error: \(error)")
             }
         }
+        self.textField.text = ""
     }
     
-    
-    @IBAction func receiveMessage(_ sender: Any) {
-    
-
-        
-//        sparkSDK!.people.list(email: EmailAddress.fromString("simon_pen@hotmail.it")!, displayName: nil, max: nil, queue: DispatchQueue.main, completionHandler: { response in
-//            
-//            for person in response.result.data!{
-//                print(person.id)
-//            }
-//            
-//        })
-//
-        if let _ = roomId {
-            
-            
-//            sparkSDK!.messages.list(roomId: roomId, completionHandler: { (response) in
-//
-//
-//                for message in response.result.data!{
-//                    print("\(message.personEmail!.toString()): \(message.text!)")
-//                }
-//                
-//
-//            })
-            
-            
-            
-            
-        } else {
-            
-            print("Send a message before receiving")
-        }
-        
-        
-    }
-    
-    @IBAction func createRoom(_ sender: Any) {
-        
-        
-        sparkSDK!.rooms.create(title: "Assistenza") { (response) in
-            
-            
-            sparkSDK!.memberships.create(roomId: response.result.data!.id!, personEmail: EmailAddress.fromString("simon_pen@hotmail.it")!, completionHandler: { (response) in
-                
-                print(response.result.data!.roomId!)
-                
-                sparkSDK!.webhooks.create(name: "Message received", targetUrl: "", resource: "messages", event: "created", filter: "") { res in
-                    switch res.result {
-                    case .success(let webhook): break
-                        
-                    // perform positive action
-                        
-                    case .failure(let error): break
-                        // perform negative action
-                    }
-                }
-                
-            })
-        }
-        
-        
-    }
     
     func registerSparkWebhook(completionHandler: ((Bool) -> Void)?) {
 
@@ -246,5 +190,95 @@ class HomeViewController: UIViewController {
         print("\(fromEmail): \(title)")
 
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true) //This will hide the keyboard
+    }
 
+
+///////////
+
+
+
+//    @IBAction func sendMessage(_ sender: Any) {
+//        sparkSDK!.messages.post(personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, text: "tattaaaaaaaa") { response in
+//            switch response.result {
+//            case .success(let message):
+//                print("Sent! Message: \(message)")
+//                self.roomId = message.roomId!
+//            // ...
+//            case .failure(let error):
+//                print("Error: \(error)")
+//            }
+//        }
+//    }
+//
+//
+//    @IBAction func receiveMessage(_ sender: Any) {
+//
+//
+//
+//        //        sparkSDK!.people.list(email: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, displayName: nil, max: nil, queue: DispatchQueue.main, completionHandler: { response in
+//        //
+//        //            for person in response.result.data!{
+//        //                print(person.id)
+//        //            }
+//        //
+//        //        })
+//        //
+//        if let _ = roomId {
+//
+//
+//            //            sparkSDK!.messages.list(roomId: roomId, completionHandler: { (response) in
+//            //
+//            //
+//            //                for message in response.result.data!{
+//            //                    print("\(message.personEmail!.toString()): \(message.text!)")
+//            //                }
+//            //
+//            //
+//            //            })
+//
+//
+//
+//
+//        } else {
+//
+//            print("Send a message before receiving")
+//        }
+//
+//
+//    }
+//
+//@   IBAction func createRoom(_ sender: Any) {
+//
+//
+//        sparkSDK!.rooms.create(title: "Assistenza") { (response) in
+//
+//
+//            sparkSDK!.memberships.create(roomId: response.result.data!.id!, personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, completionHandler: { (response) in
+//
+//                print(response.result.data!.roomId!)
+//
+//                sparkSDK!.webhooks.create(name: "Message received", targetUrl: "", resource: "messages", event: "created", filter: "") { res in
+//                    switch res.result {
+//                    case .success(let webhook): break
+//
+//                        // perform positive action
+//
+//                    case .failure(let error): break
+//                        // perform negative action
+//                    }
+//                }
+//
+//            })
+//        }
+//
+//
+//    }
 }
