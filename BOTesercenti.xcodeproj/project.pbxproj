@@ -16,6 +16,7 @@
 		10DBFF341F3BE35A00209DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DBFF001F3BE35A00209DEC /* LaunchScreen.storyboard */; };
 		20D2DF1D1F034A8A00902BF7 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D2DF1C1F034A8A00902BF7 /* PushKit.framework */; };
 		2BB575EA30CFE25FC4FF3719 /* Pods_Buddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */; };
+		AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94245220B1CBA30060BDF9 /* KSLogger.swift */; };
 		ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F020B1AFE900B08E2A /* LoginViewController.swift */; };
 		ACB813F420B1AFE900B08E2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* HomeViewController.swift */; };
 		ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB813F220B1AFE900B08E2A /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		861588002A38F8E4EAC28858 /* Pods-SparkBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		A5EC2689BD1510DCC34D6D20 /* Pods-SparkBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		AC94245220B1CBA30060BDF9 /* KSLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLogger.swift; sourceTree = "<group>"; };
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACB813F120B1AFE900B08E2A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACB813F220B1AFE900B08E2A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				ACB813F120B1AFE900B08E2A /* HomeViewController.swift */,
 				ACB813F020B1AFE900B08E2A /* LoginViewController.swift */,
 				ACB813F220B1AFE900B08E2A /* Main.storyboard */,
+				AC94245220B1CBA30060BDF9 /* KSLogger.swift */,
 			);
 			path = BOTesercenti;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */,
 				ACB813F420B1AFE900B08E2A /* HomeViewController.swift in Sources */,
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
+				AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

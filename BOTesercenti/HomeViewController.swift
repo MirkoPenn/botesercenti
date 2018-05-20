@@ -37,10 +37,9 @@ class HomeViewController: UIViewController {
             if error == nil{
                 print("Phone registered")
                 sparkSDK?.messages.onEvent = { event in
-                    print("ciao1")
                     switch event{
                     case .messageReceived(let message):
-                        print("ciao2")
+                        print("\(message.personEmail): \(message.text)")
                         break
                     case .messageDeleted(let _):
                         break
