@@ -69,13 +69,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func sendMessageButton(_ sender: Any) {
+        self.messageLabel.text?.append("\nYou: \(textField.text ?? "ERROR")")
         sparkSDK!.messages.post(personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, text: textField.text ?? "") { response in
             switch response.result {
             case .success(let message):
                 print("Sent! Message: \(message)")
                 self.roomId = message.roomId!
-                print("\(message.personEmail): \(message.text)")
-                self.messageLabel.text?.append("\nYou: \(message.text ?? "ERROR")")
+//                print("\(message.personEmail): \(message.text)")
             // ...
             case .failure(let error):
                 print("Error: \(error)")
