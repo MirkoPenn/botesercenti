@@ -28,6 +28,8 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        messageLabel.text = ""
         
         chatView.isHidden = true
         
@@ -43,7 +45,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
                     case .messageReceived(let message):
                         
                         print("\(message.personEmail): \(message.text)")
-                        self.messageLabel.text?.append("\(message.personEmail): \(message.text)")
+                        self.messageLabel.text?.append("\nBot: \(message.text ?? "ERROR")")
                         
                         break
                     case .messageDeleted(let _):
@@ -73,7 +75,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
                 print("Sent! Message: \(message)")
                 self.roomId = message.roomId!
                 print("\(message.personEmail): \(message.text)")
-                self.messageLabel.text?.append("\(message.personEmail): \(message.text)")
+                self.messageLabel.text?.append("\nYou: \(message.text ?? "ERROR")")
             // ...
             case .failure(let error):
                 print("Error: \(error)")
