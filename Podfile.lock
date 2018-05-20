@@ -1,0 +1,79 @@
+PODS:
+  - Alamofire (4.7.2)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - Cartography (3.0.1)
+  - FontAwesome.swift (1.3.2)
+  - GTMNSStringHTMLAdditions (0.2.1)
+  - KeychainAccess (3.1.1)
+  - NVActivityIndicatorView (4.2.1):
+    - NVActivityIndicatorView/Presenter (= 4.2.1)
+  - NVActivityIndicatorView/Presenter (4.2.1)
+  - ObjectiveGumbo (0.1)
+  - ObjectMapper (3.1.0)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - SparkSDK (1.4.0):
+    - Alamofire (~> 4.7.1)
+    - AlamofireObjectMapper (~> 5.0)
+    - KeychainAccess (~> 3.1)
+    - ObjectMapper (~> 3.1)
+    - Starscream (~> 3.0.5)
+    - SwiftyJSON (~> 4.0)
+  - Starscream (3.0.5)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - Cartography
+  - FontAwesome.swift
+  - GTMNSStringHTMLAdditions
+  - NVActivityIndicatorView
+  - ObjectiveGumbo
+  - SDWebImage
+  - SparkSDK (from `https://github.com/webex/spark-ios-sdk.git`, branch `develop`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - Cartography
+    - FontAwesome.swift
+    - GTMNSStringHTMLAdditions
+    - KeychainAccess
+    - NVActivityIndicatorView
+    - ObjectiveGumbo
+    - ObjectMapper
+    - SDWebImage
+    - Starscream
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  SparkSDK:
+    :branch: develop
+    :git: https://github.com/webex/spark-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  SparkSDK:
+    :commit: cd95e9f16d874895837af66abb862adf7764804c
+    :git: https://github.com/webex/spark-ios-sdk.git
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
+  FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
+  GTMNSStringHTMLAdditions: 4bfc402b1b17165360728083156cae0a74ecb308
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
+  ObjectiveGumbo: 0704c4930688132abb3d5df2000334f30504856f
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SparkSDK: 57c7cfe5b899cc8dcf3ef369dc86a99afbc9f13b
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: bfd351ffe868b39ccc6c08d0fdcfe1023ac978cf
+
+COCOAPODS: 1.5.2
