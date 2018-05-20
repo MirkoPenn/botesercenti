@@ -39,7 +39,7 @@
 		10DBFF5D1F3BE3DB00209DEC /* BOTesercenti-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BOTesercenti-Bridging-Header.h"; sourceTree = "<group>"; };
 		10DBFF5E1F3BE3DB00209DEC /* BOTesercenti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BOTesercenti.entitlements; sourceTree = "<group>"; };
 		17F849E6B5E2F6A58A89411A /* Pods_SparkBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		206281F61ED1782C007E28F9 /* BuBOTesercentiBOTesercentiies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuBOTesercentiBOTesercentiies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		206281F61ED1782C007E28F9 /* BOTesercenti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOTesercenti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D2DF1C1F034A8A00902BF7 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		3635DB5E2E4334B9F48B2469 /* Pods-Buddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Buddies/Pods-Buddies.release.xcconfig"; sourceTree = "<group>"; };
 		3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +120,7 @@
 		206281F71ED1782C007E28F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				206281F61ED1782C007E28F9 /* BuBOTesercentiBOTesercentiies.app */,
+				206281F61ED1782C007E28F9 /* BOTesercenti.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		206281F51ED1782C007E28F9 /* BuBOTesercentiBOTesercentiies */ = {
+		206281F51ED1782C007E28F9 /* BOTesercenti */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 206282081ED1782C007E28F9 /* Build configuration list for PBXNativeTarget "BuBOTesercentiBOTesercentiies" */;
+			buildConfigurationList = 206282081ED1782C007E28F9 /* Build configuration list for PBXNativeTarget "BOTesercenti" */;
 			buildPhases = (
 				69FFB32404F745C1A67E89F3 /* [CP] Check Pods Manifest.lock */,
 				206281F21ED1782C007E28F9 /* Sources */,
@@ -163,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = BuBOTesercentiBOTesercentiies;
+			name = BOTesercenti;
 			productName = Sweetie;
-			productReference = 206281F61ED1782C007E28F9 /* BuBOTesercentiBOTesercentiies.app */;
+			productReference = 206281F61ED1782C007E28F9 /* BOTesercenti.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				206281F51ED1782C007E28F9 /* BuBOTesercentiBOTesercentiies */,
+				206281F51ED1782C007E28F9 /* BOTesercenti */,
 			);
 		};
 /* End PBXProject section */
@@ -486,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		206282081ED1782C007E28F9 /* Build configuration list for PBXNativeTarget "BuBOTesercentiBOTesercentiies" */ = {
+		206282081ED1782C007E28F9 /* Build configuration list for PBXNativeTarget "BOTesercenti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				206282091ED1782C007E28F9 /* Debug */,
