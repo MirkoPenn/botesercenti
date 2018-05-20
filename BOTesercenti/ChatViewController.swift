@@ -43,7 +43,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
                     case .messageReceived(let message):
                         
                         print("\(message.personEmail): \(message.text)")
-                        self.messageLabel.text = message.text
+                        self.messageLabel.text?.append("\(message.personEmail): \(message.text)")
                         
                         break
                     case .messageDeleted(let _):
@@ -72,6 +72,8 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
             case .success(let message):
                 print("Sent! Message: \(message)")
                 self.roomId = message.roomId!
+                print("\(message.personEmail): \(message.text)")
+                self.messageLabel.text?.append("\(message.personEmail): \(message.text)")
             // ...
             case .failure(let error):
                 print("Error: \(error)")
