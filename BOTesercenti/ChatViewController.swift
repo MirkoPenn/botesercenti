@@ -37,6 +37,8 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
         self.messageTableview.rowHeight = UITableViewAutomaticDimension
         self.messageTableview.estimatedRowHeight = 140
@@ -134,6 +136,17 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y -= 250
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+            self.view.frame.origin.y += 250
+        
+    }
+    
     
     func convertHTMLtoPDF(path: String) -> NSMutableData {
         
