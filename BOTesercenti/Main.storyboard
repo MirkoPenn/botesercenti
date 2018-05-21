@@ -157,7 +157,7 @@
                                         <rect key="frame" x="298" y="540" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0078431372549019607" green="0.54117647058823526" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Send">
+                                        <state key="normal" title="Invio">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="297" y="565"/>
         </scene>
-        <!--Operator call-->
+        <!--Direct call-->
         <scene sceneID="5EW-pW-uha">
             <objects>
-                <viewController title="Operator call" id="R2u-IX-4iA" customClass="OperatorCallViewController" customModule="BOTesercenti" sceneMemberID="viewController">
+                <viewController title="Direct call" id="R2u-IX-4iA" customClass="OperatorCallViewController" customModule="BOTesercenti" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vde-FB-qrp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -311,7 +311,7 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching for an operator..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NES-Ez-sSX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cerco un operatore..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NES-Ez-sSX">
                                 <rect key="frame" x="16" y="64" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
