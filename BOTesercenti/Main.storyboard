@@ -300,7 +300,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chat" width="334" height="334"/>
         <image name="closeCall" width="276" height="276"/>
         <image name="crono" width="1379" height="1346"/>
         <image name="message" width="2080" height="2189"/>
