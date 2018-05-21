@@ -15,14 +15,17 @@
 		10DBFF331F3BE35A00209DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10DBFEFF1F3BE35A00209DEC /* Assets.xcassets */; };
 		10DBFF341F3BE35A00209DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DBFF001F3BE35A00209DEC /* LaunchScreen.storyboard */; };
 		20D2DF1D1F034A8A00902BF7 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D2DF1C1F034A8A00902BF7 /* PushKit.framework */; };
-		2BB575EA30CFE25FC4FF3719 /* Pods_Buddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */; };
+		87B100B3CE9F0E64F36CFCD4 /* Pods_BOTesercenti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386F6769CE7F355F5DAE6482 /* Pods_BOTesercenti.framework */; };
 		AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94245220B1CBA30060BDF9 /* KSLogger.swift */; };
 		ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F020B1AFE900B08E2A /* LoginViewController.swift */; };
 		ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* ChatViewController.swift */; };
 		ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB813F220B1AFE900B08E2A /* Main.storyboard */; };
+		B36F8A0520B29D450097B9F7 /* Animation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B36F8A0320B29D450097B9F7 /* Animation.xcassets */; };
+		B36F8A0620B29D450097B9F7 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36F8A0420B29D450097B9F7 /* AnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04760B4BCFF8CCD84E3569EE /* Pods-BOTesercenti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BOTesercenti.release.xcconfig"; path = "Pods/Target Support Files/Pods-BOTesercenti/Pods-BOTesercenti.release.xcconfig"; sourceTree = "<group>"; };
 		10372EC9208D6DB8000B9300 /* MessageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageParser.h; sourceTree = "<group>"; };
 		10372ECA208D6DB9000B9300 /* MessageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageParser.m; sourceTree = "<group>"; };
 		10372ECB208D6DB9000B9300 /* NSAttributedString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extensions.h"; sourceTree = "<group>"; };
@@ -42,13 +45,16 @@
 		206281F61ED1782C007E28F9 /* BOTesercenti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOTesercenti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D2DF1C1F034A8A00902BF7 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		3635DB5E2E4334B9F48B2469 /* Pods-Buddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Buddies/Pods-Buddies.release.xcconfig"; sourceTree = "<group>"; };
-		3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		386F6769CE7F355F5DAE6482 /* Pods_BOTesercenti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BOTesercenti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FB91ACB05D7C24B814D146E /* Pods-BOTesercenti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BOTesercenti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BOTesercenti/Pods-BOTesercenti.debug.xcconfig"; sourceTree = "<group>"; };
 		861588002A38F8E4EAC28858 /* Pods-SparkBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		A5EC2689BD1510DCC34D6D20 /* Pods-SparkBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		AC94245220B1CBA30060BDF9 /* KSLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLogger.swift; sourceTree = "<group>"; };
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		ACB813F220B1AFE900B08E2A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B36F8A0320B29D450097B9F7 /* Animation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Animation.xcassets; path = ../../Animation.xcassets; sourceTree = "<group>"; };
+		B36F8A0420B29D450097B9F7 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationView.swift; path = ../../AnimationView.swift; sourceTree = "<group>"; };
 		DB15DCABD7192B62340F0D4E /* Pods-Buddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Buddies/Pods-Buddies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20D2DF1D1F034A8A00902BF7 /* PushKit.framework in Frameworks */,
-				2BB575EA30CFE25FC4FF3719 /* Pods_Buddies.framework in Frameworks */,
+				87B100B3CE9F0E64F36CFCD4 /* Pods_BOTesercenti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,8 @@
 				ACB813F120B1AFE900B08E2A /* ChatViewController.swift */,
 				ACB813F020B1AFE900B08E2A /* LoginViewController.swift */,
 				ACB813F220B1AFE900B08E2A /* Main.storyboard */,
+				B36F8A0320B29D450097B9F7 /* Animation.xcassets */,
+				B36F8A0420B29D450097B9F7 /* AnimationView.swift */,
 				AC94245220B1CBA30060BDF9 /* KSLogger.swift */,
 			);
 			path = BOTesercenti;
@@ -130,7 +138,7 @@
 			children = (
 				20D2DF1C1F034A8A00902BF7 /* PushKit.framework */,
 				17F849E6B5E2F6A58A89411A /* Pods_SparkBuddy.framework */,
-				3D7ADED853B84FB0D9B3F280 /* Pods_Buddies.framework */,
+				386F6769CE7F355F5DAE6482 /* Pods_BOTesercenti.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +150,8 @@
 				A5EC2689BD1510DCC34D6D20 /* Pods-SparkBuddy.release.xcconfig */,
 				DB15DCABD7192B62340F0D4E /* Pods-Buddies.debug.xcconfig */,
 				3635DB5E2E4334B9F48B2469 /* Pods-Buddies.release.xcconfig */,
+				7FB91ACB05D7C24B814D146E /* Pods-BOTesercenti.debug.xcconfig */,
+				04760B4BCFF8CCD84E3569EE /* Pods-BOTesercenti.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -180,7 +190,7 @@
 				TargetAttributes = {
 					206281F51ED1782C007E28F9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 6824YNJ23L;
+						DevelopmentTeam = EDBXQDU63E;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -218,6 +228,7 @@
 			files = (
 				ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */,
 				10DBFF331F3BE35A00209DEC /* Assets.xcassets in Resources */,
+				B36F8A0520B29D450097B9F7 /* Animation.xcassets in Resources */,
 				10DBFF341F3BE35A00209DEC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,7 +247,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Buddies-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BOTesercenti-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -249,7 +260,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Buddies/Pods-Buddies-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BOTesercenti/Pods-BOTesercenti-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
@@ -288,7 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Buddies/Pods-Buddies-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BOTesercenti/Pods-BOTesercenti-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -304,6 +315,7 @@
 				10372ED3208D6DBA000B9300 /* NSAttributedString+Extensions.m in Sources */,
 				10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */,
 				ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */,
+				B36F8A0620B29D450097B9F7 /* AnimationView.swift in Sources */,
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
 				AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */,
 			);
@@ -432,18 +444,18 @@
 		};
 		206282091ED1782C007E28F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB15DCABD7192B62340F0D4E /* Pods-Buddies.debug.xcconfig */;
+			baseConfigurationReference = 7FB91ACB05D7C24B814D146E /* Pods-BOTesercenti.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6824YNJ23L;
+				DEVELOPMENT_TEAM = EDBXQDU63E;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -454,18 +466,18 @@
 		};
 		2062820A1ED1782C007E28F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3635DB5E2E4334B9F48B2469 /* Pods-Buddies.release.xcconfig */;
+			baseConfigurationReference = 04760B4BCFF8CCD84E3569EE /* Pods-BOTesercenti.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6824YNJ23L;
+				DEVELOPMENT_TEAM = EDBXQDU63E;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
