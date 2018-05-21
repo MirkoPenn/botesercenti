@@ -61,8 +61,66 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                         //                        print("\(message.personEmail): \(message.text)")
                         //                        self.messageLabel.text?.append("\nBot: \(message.text ?? "ERROR")")
                         DispatchQueue.main.async{
-                            self.messageList.append(message)
-                            self.messageTableview.reloadData()
+                            
+                            if let _ = message.files{
+                                
+                                if(!(message.files?.isEmpty)!){
+                                    
+                                    print("found files")
+                                    
+                                    for file in message.files! {
+                                        
+                                        print(file)
+                                        
+                                        if file.mimeType == "text/html"{
+                                            print("found an html")
+                                            
+                                            sparkSDK?.messages.downloadFile(file, completionHandler: { (result) in
+                                                
+                                                if let _ = result.data {
+                                                    
+                                                    var pdfName = message.text!
+                                                    
+                                                    print(result.data!)
+                                                 
+                                                    self.messageList.append(message)
+                                                    self.tableview.reloadData()
+                                                    
+                                                    var convertedpdf = self.convertHTMLtoPDF(path: result.data!.path)
+                                                    
+                                                    pdfName.removeLast(4)
+                                                    
+                                                    pdfs.append(PDF(name: pdfName, size: String(ByteCountFormatter().string(fromByteCount: Int64(convertedpdf.length))), date: Date(), data: convertedpdf)!)
+                                                    
+                                                    (UIApplication.shared.delegate as! AppDelegate).savePDF()
+                                                     
+                                                    
+                                                }
+                                                
+                                            })
+                                        } else {
+                                            
+                                            self.messageList.append(message)
+                                            self.tableview.reloadData()
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }else {
+                                    
+                                    self.messageList.append(message)
+                                    self.tableview.reloadData()
+                                    
+                                }
+                            } else {
+                                
+                                self.messageList.append(message)
+                                self.tableview.reloadData()
+                                
+                            }
+                            
                         }
                         //
                         break

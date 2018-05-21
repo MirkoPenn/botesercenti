@@ -302,8 +302,9 @@
     <resources>
         <image name="chat" width="334" height="334"/>
         <image name="closeCall" width="276" height="276"/>
-        <image name="history" width="120" height="118"/>
-        <image name="mute" width="232" height="245"/>
-        <image name="operator" width="753" height="849"/>
+        <image name="crono" width="1379" height="1346"/>
+        <image name="message" width="2080" height="2189"/>
+        <image name="mute" width="475" height="483"/>
+        <image name="operatoreBlur" width="376" height="424"/>
     </resources>
 </document>
