@@ -26,6 +26,7 @@
 		B390C4E420B2AA5F00318360 /* PDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */; };
 		B390C4E520B2AA5F00318360 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E220B2AA5F00318360 /* PDF.swift */; };
 		B390C4E620B2AA5F00318360 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E320B2AA5F00318360 /* PDFTableViewCell.swift */; };
+		FEF6692B20B2B7330040F4E8 /* MessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF6692A20B2B7330040F4E8 /* MessageTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		B390C4E220B2AA5F00318360 /* PDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
 		B390C4E320B2AA5F00318360 /* PDFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewCell.swift; sourceTree = "<group>"; };
 		DB15DCABD7192B62340F0D4E /* Pods-Buddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Buddies/Pods-Buddies.debug.xcconfig"; sourceTree = "<group>"; };
+		FEF6692A20B2B7330040F4E8 /* MessageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				ACB813F120B1AFE900B08E2A /* ChatViewController.swift */,
 				ACB813F020B1AFE900B08E2A /* LoginViewController.swift */,
 				ACB813F220B1AFE900B08E2A /* Main.storyboard */,
+				FEF6692A20B2B7330040F4E8 /* MessageTableCell.swift */,
 				AC94245220B1CBA30060BDF9 /* KSLogger.swift */,
 				AC06A62720B2896700593729 /* OperatorCallViewController.swift */,
 			);
@@ -202,7 +205,7 @@
 				TargetAttributes = {
 					206281F51ED1782C007E28F9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 6824YNJ23L;
+						DevelopmentTeam = F27C7JQD27;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -330,6 +333,7 @@
 				10372ED2208D6DBA000B9300 /* MessageParser.m in Sources */,
 				10372ED3208D6DBA000B9300 /* NSAttributedString+Extensions.m in Sources */,
 				10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */,
+				FEF6692B20B2B7330040F4E8 /* MessageTableCell.swift in Sources */,
 				ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */,
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
 				B390C4E520B2AA5F00318360 /* PDF.swift in Sources */,
@@ -467,11 +471,11 @@
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6824YNJ23L;
+				DEVELOPMENT_TEAM = F27C7JQD27;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercentimirko;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenticarlo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -489,11 +493,11 @@
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6824YNJ23L;
+				DEVELOPMENT_TEAM = F27C7JQD27;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercentimirko;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenticarlo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
