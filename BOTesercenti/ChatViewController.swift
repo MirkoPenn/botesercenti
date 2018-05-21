@@ -25,6 +25,10 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     var hasLogged: Bool = false
     
+    var documentComposer: DocumentComposer!
+    
+    var HTMLContent: String!
+    
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
@@ -39,13 +43,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         super.viewDidLoad()
         
         sendButton.layer.cornerRadius = 5
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector (keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-    
+        
         self.messageTableview.rowHeight = UITableViewAutomaticDimension
         self.messageTableview.estimatedRowHeight = 140
         
@@ -92,7 +96,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                     pdfName.removeLast(4)
                                                     
                                                     print(result.data!)
-                                                 
+                                                    
                                                     self.messageList.append(message)
                                                     self.messageTableview.reloadData()
                                                     
@@ -103,7 +107,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                     pdfs.append(PDF(name: pdfName, size: String(ByteCountFormatter().string(fromByteCount: Int64(convertedpdf.length))), date: Date(), data: convertedpdf)!)
                                                     
                                                     (UIApplication.shared.delegate as! AppDelegate).savePDF()
-                                                     
+                                                    
                                                     
                                                 }
                                                 
@@ -154,7 +158,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     @objc func keyboardWillHide(notification: NSNotification) {
         
-            self.view.frame.origin.y += 250
+        self.view.frame.origin.y += 250
         print (self.view.frame.origin.y)
         print ("--------------------//")
         
@@ -165,40 +169,116 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         
         do {
-        
+            
             var HTMLContent = try String(contentsOfFile: path)
-        
+            
             let printPageRenderer = CustomPrintPageRenderer()
-     
+            
             let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
             printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
-        
+            
             let pdfData = NSMutableData()
-        
+            
             UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
             
             for i in 0..<printPageRenderer.numberOfPages {
                 UIGraphicsBeginPDFPage()
                 printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
             }
-        
+            
             UIGraphicsEndPDFContext()
-        
+            
             var pdfFilename = "pdffile.pdf"
             pdfData.write(toFile: pdfFilename, atomically: true)
-        
-           print("PDF NAME \(pdfFilename)")
-        
-//            var itemsToShare = [AnyHashable]()
-//            itemsToShare.append(pdfData)
-//            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-//            self.present(controller, animated: true) {() -> Void in }
+            
+            print("PDF NAME \(pdfFilename)")
+            
+            //            var itemsToShare = [AnyHashable]()
+            //            itemsToShare.append(pdfData)
+            //            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            //            self.present(controller, animated: true) {() -> Void in }
             
             
             return pdfData
             
         }
+            
+        catch {print("error")}
         
+        return NSMutableData()
+        
+    }
+    
+    //compilazione moduli (pdf)
+    func compileHTML(htmlName: String) {
+        
+        if htmlName == "progetto-a-mercato.hmtl" {
+            //            html
+            documentComposer = DocumentComposer()
+            if let invoiceHTML = documentComposer.renderHTML1(){
+                
+                HTMLContent = invoiceHTML
+                let pdf = convertHTMLtoPDF(html: HTMLContent)
+                
+                var itemsToShare = [AnyHashable]()
+                itemsToShare.append(pdf)
+                let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+                present(controller, animated: true) {() -> Void in }
+            }
+        } else if htmlName == "progetto-finanziario.html" {
+            documentComposer = DocumentComposer()
+            if let invoiceHTML = documentComposer.renderHTML2(){
+                
+                HTMLContent = invoiceHTML
+                let pdf = convertHTMLtoPDF(html: HTMLContent)
+                
+                var itemsToShare = [AnyHashable]()
+                itemsToShare.append(pdf)
+                let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+                present(controller, animated: true) {() -> Void in }
+            }
+        } else {
+            //dai il pdf vuoto
+            convertHTMLtoPDF(html: htmlName)
+        }
+    }
+    
+    func convertHTMLtoPDF(html: String) -> NSMutableData {
+        
+        
+        do {
+            
+            let printPageRenderer = CustomPrintPageRenderer()
+            
+            let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+            printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+            
+            let pdfData = NSMutableData()
+            
+            UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+            
+            for i in 0..<printPageRenderer.numberOfPages {
+                UIGraphicsBeginPDFPage()
+                printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            }
+            
+            UIGraphicsEndPDFContext()
+            
+            var pdfFilename = "pdffile.pdf"
+            pdfData.write(toFile: pdfFilename, atomically: true)
+            
+            print("PDF NAME \(pdfFilename)")
+            
+            //            var itemsToShare = [AnyHashable]()
+            //            itemsToShare.append(pdfData)
+            //            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            //            self.present(controller, animated: true) {() -> Void in }
+            
+            
+            return pdfData
+            
+        }
+            
         catch {print("error")}
         
         return NSMutableData()
@@ -223,11 +303,11 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                 print("Sent! Message: \(message)")
                 self.roomId = message.roomId!
                 DispatchQueue.main.async {
-                self.messageList.append(message)
-                self.messageTableview.reloadData()
+                    self.messageList.append(message)
+                    self.messageTableview.reloadData()
                 }
                 break
-//                print("\(message.personEmail): \(message.text)")
+                //                print("\(message.personEmail): \(message.text)")
             // ...
             case .failure(let error):
                 print("Error: \(error)")
@@ -238,15 +318,15 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     
     func registerSparkWebhook(completionHandler: ((Bool) -> Void)?) {
-
+        
         print("Checking webhook")
         
         if let voipToken = UserDefaults.standard.string(forKey: "com.appleacademy.botesercenti.data.device_voip_token"),
             let msgToken = UserDefaults.standard.string(forKey: "com.appleacademy.botesercenti.data.device_msg_token") {
-
-
+            
+            
             let threahGroup = DispatchGroup()
-
+            
             /*
              Check if MSG web hook is registered for user
              */
@@ -273,7 +353,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                     })
                 }
             }))
-
+            
             /*
              Register notificaiton info into web hook server
              */
@@ -288,20 +368,20 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                         "msgToken": msgToken,
                         "personId": userProfileId!
                     ]
-
+                    
                     Alamofire.request("https://botesercenti.herokuapp.com/register", method: .post, parameters: webHookServiceParamater, encoding: JSONEncoding.default).validate().response { res in
                         completionHandler?(true)
                         if(res.error == nil){
                             print("Webhookserver Register success")
                             isRegisterdOnWebHookServer = true
-
+                            
                         }
                     }
                 }
             }))
             threahGroup.notify(queue: DispatchQueue.global(), execute: {
                 DispatchQueue.main.async {
-
+                    
                 }
             })
         }
@@ -309,7 +389,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
             completionHandler?(false)
         }
     }
-
+    
     
     func createNewWebHook(){
         /* create webhook for notification reception */
@@ -329,7 +409,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         print("Creating webhook... \(webHookName), \(targetUrl)")
         sparkSDK?.webhooks.create(name: webHookName, targetUrl: targetUrl, resource: resource, event: event, completionHandler: { (response: ServiceResponse<Webhook>) in
             switch response.result{
-
+                
             case .success(let webhook):
                 webhookId = webhook.id!
                 print("Created webhook with ID: \(webhookId)")
@@ -338,14 +418,14 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                 print(error.localizedDescription)
                 break
             }
-
+            
         })
     }
-
+    
     func receviMessageNotification(fromEmail: String, title: String){
         
         print("\(fromEmail): \(title)")
-
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -356,15 +436,15 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true) //This will hide the keyboard
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")! as! MessageTableCell
-//        print(cell)
-//        cell.setMessage(message: messageList[indexPath.row])
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")! as! MessageTableCell
+        //        print(cell)
+        //        cell.setMessage(message: messageList[indexPath.row])
         let cell = MessageTableCell(message:messageList[indexPath.row])
         
         return cell
@@ -388,85 +468,85 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-///////////
-
-
-
-//    @IBAction func sendMessage(_ sender: Any) {
-//        sparkSDK!.messages.post(personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, text: "tattaaaaaaaa") { response in
-//            switch response.result {
-//            case .success(let message):
-//                print("Sent! Message: \(message)")
-//                self.roomId = message.roomId!
-//            // ...
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
-//    }
-//
-//
-//    @IBAction func receiveMessage(_ sender: Any) {
-//
-//
-//
-//        //        sparkSDK!.people.list(email: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, displayName: nil, max: nil, queue: DispatchQueue.main, completionHandler: { response in
-//        //
-//        //            for person in response.result.data!{
-//        //                print(person.id)
-//        //            }
-//        //
-//        //        })
-//        //
-//        if let _ = roomId {
-//
-//
-//            //            sparkSDK!.messages.list(roomId: roomId, completionHandler: { (response) in
-//            //
-//            //
-//            //                for message in response.result.data!{
-//            //                    print("\(message.personEmail!.toString()): \(message.text!)")
-//            //                }
-//            //
-//            //
-//            //            })
-//
-//
-//
-//
-//        } else {
-//
-//            print("Send a message before receiving")
-//        }
-//
-//
-//    }
-//
-//@   IBAction func createRoom(_ sender: Any) {
-//
-//
-//        sparkSDK!.rooms.create(title: "Assistenza") { (response) in
-//
-//
-//            sparkSDK!.memberships.create(roomId: response.result.data!.id!, personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, completionHandler: { (response) in
-//
-//                print(response.result.data!.roomId!)
-//
-//                sparkSDK!.webhooks.create(name: "Message received", targetUrl: "", resource: "messages", event: "created", filter: "") { res in
-//                    switch res.result {
-//                    case .success(let webhook): break
-//
-//                        // perform positive action
-//
-//                    case .failure(let error): break
-//                        // perform negative action
-//                    }
-//                }
-//
-//            })
-//        }
-//
-//
-//    }
+    
+    ///////////
+    
+    
+    
+    //    @IBAction func sendMessage(_ sender: Any) {
+    //        sparkSDK!.messages.post(personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, text: "tattaaaaaaaa") { response in
+    //            switch response.result {
+    //            case .success(let message):
+    //                print("Sent! Message: \(message)")
+    //                self.roomId = message.roomId!
+    //            // ...
+    //            case .failure(let error):
+    //                print("Error: \(error)")
+    //            }
+    //        }
+    //    }
+    //
+    //
+    //    @IBAction func receiveMessage(_ sender: Any) {
+    //
+    //
+    //
+    //        //        sparkSDK!.people.list(email: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, displayName: nil, max: nil, queue: DispatchQueue.main, completionHandler: { response in
+    //        //
+    //        //            for person in response.result.data!{
+    //        //                print(person.id)
+    //        //            }
+    //        //
+    //        //        })
+    //        //
+    //        if let _ = roomId {
+    //
+    //
+    //            //            sparkSDK!.messages.list(roomId: roomId, completionHandler: { (response) in
+    //            //
+    //            //
+    //            //                for message in response.result.data!{
+    //            //                    print("\(message.personEmail!.toString()): \(message.text!)")
+    //            //                }
+    //            //
+    //            //
+    //            //            })
+    //
+    //
+    //
+    //
+    //        } else {
+    //
+    //            print("Send a message before receiving")
+    //        }
+    //
+    //
+    //    }
+    //
+    //@   IBAction func createRoom(_ sender: Any) {
+    //
+    //
+    //        sparkSDK!.rooms.create(title: "Assistenza") { (response) in
+    //
+    //
+    //            sparkSDK!.memberships.create(roomId: response.result.data!.id!, personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, completionHandler: { (response) in
+    //
+    //                print(response.result.data!.roomId!)
+    //
+    //                sparkSDK!.webhooks.create(name: "Message received", targetUrl: "", resource: "messages", event: "created", filter: "") { res in
+    //                    switch res.result {
+    //                    case .success(let webhook): break
+    //
+    //                        // perform positive action
+    //
+    //                    case .failure(let error): break
+    //                        // perform negative action
+    //                    }
+    //                }
+    //
+    //            })
+    //        }
+    //
+    //
+    //    }
 }
