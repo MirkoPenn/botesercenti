@@ -96,7 +96,7 @@ class OperatorCallViewController: UIViewController {
             print("Call ======= > Connected")
             
             self?.activityIndicator.isHidden = true
-            self?.blurEffectView?.isHidden = true
+            self?.contactImage.image = #imageLiteral(resourceName: "operator")
             self?.callLabel.text = "Operator"
             self?.timeLabel.text = "00:00"
             self?.muteButton.isHidden = false
@@ -219,7 +219,7 @@ class OperatorCallViewController: UIViewController {
 //                    self.dismiss(animated: true, completion: {})
                     print("Call rejected.")
                     self.callTimer?.invalidate()
-                    self.callLabel.text = "Disconnected..."
+                    self.callLabel.text = "Disconnected"
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.popOverDisconnected), userInfo: nil, repeats: false)
                 }
             })
