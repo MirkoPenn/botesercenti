@@ -10,13 +10,25 @@ import UIKit
 import SparkSDK
 import Alamofire
 
-class ChatViewController: UIViewController, UITextFieldDelegate {
-
+class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")!
+        let cell = MessageTableCell(message:messageList[indexPath.row])
+        return cell
+    }
+    
+    @IBOutlet weak var tableview: UITableView!
+    
     var userId: String?
     
     var roomId: String?
     
-    @IBOutlet weak var messageLabel: UILabel!
+    var messageList: [Message] = []
+    
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
@@ -28,10 +40,10 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        messageLabel.text = ""
         
         chatView.isHidden = true
+        tableview.delegate = self
+        tableview.dataSource = self
         
         textField.delegate = self
         
@@ -43,9 +55,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
                 sparkSDK?.messages.onEvent = { event in
                     switch event{
                     case .messageReceived(let message):
-                        print("\(message.personEmail): \(message.text)")
-                        self.messageLabel.text?.append("\nBot: \(message.text ?? "ERROR")")
-                        
+                        //                        print("\(message.personEmail): \(message.text)")
+                        //                        self.messageLabel.text?.append("\nBot: \(message.text ?? "ERROR")")
+                        DispatchQueue.main.async{
+                            self.messageList.append(message)
+                            self.tableview.reloadData()
+                        }
+                        //
                         break
                     case .messageDeleted(let _):
                         break
@@ -68,12 +84,17 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func sendMessageButton(_ sender: Any) {
-        self.messageLabel.text?.append("\nYou: \(textField.text ?? "ERROR")")
+        //self.messageLabel.text?.append("\nYou: \(textField.text ?? "ERROR")")
         sparkSDK!.messages.post(personEmail: EmailAddress.fromString("JarvisiOS@sparkbot.io")!, text: textField.text ?? "") { response in
             switch response.result {
             case .success(let message):
                 print("Sent! Message: \(message)")
                 self.roomId = message.roomId!
+                DispatchQueue.main.async {
+                self.messageList.append(message)
+                self.tableview.reloadData()
+                }
+                break
 //                print("\(message.personEmail): \(message.text)")
             // ...
             case .failure(let error):
