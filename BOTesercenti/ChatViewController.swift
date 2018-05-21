@@ -9,6 +9,7 @@
 import UIKit
 import SparkSDK
 import Alamofire
+import os.log
 
 class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,8 +62,58 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                         //                        print("\(message.personEmail): \(message.text)")
                         //                        self.messageLabel.text?.append("\nBot: \(message.text ?? "ERROR")")
                         DispatchQueue.main.async{
-                            self.messageList.append(message)
-                            self.tableview.reloadData()
+                            
+                            if let _ = message.files{
+                                
+                                if(!(message.files?.isEmpty)!){
+                                    
+                                    print("found files")
+                                    
+                                    for file in message.files! {
+                                        
+                                        print(file)
+                                        
+                                        if file.mimeType == "text/html"{
+                                            
+                                            
+                                            print("found an html")
+                                            
+                                            sparkSDK?.messages.downloadFile(file, completionHandler: { (result) in
+                                                
+                                                if let _ = result.data {
+                                                    
+                                                    var pdfName = message.text!
+                                                    
+                                                    print(result.data!)
+                                                 
+                                                    self.messageList.append(message)
+                                                    self.tableview.reloadData()
+                                                    
+                                                    var convertedpdf = self.convertHTMLtoPDF(path: result.data!.path)
+                                                    
+                                                    pdfName.removeLast(4)
+                                                    
+                                                    pdfs.append(PDF(name: pdfName, size: "30mb", date: Date(), data: convertedpdf)!)
+                                                    
+                                                    (UIApplication.shared.delegate as! AppDelegate).savePDF()
+                                                     
+                                                    
+                                                }
+                                                
+                                            })
+                                        } else {
+                                            
+                                            self.messageList.append(message)
+                                            self.tableview.reloadData()
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                            }
+                            
                         }
                         //
                         break
@@ -75,6 +126,50 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         })
         
         // Do any additional setup after loading the view.
+    }
+    
+    func convertHTMLtoPDF(path: String) -> NSMutableData {
+        
+        
+        do {
+        
+            var HTMLContent = try String(contentsOfFile: path)
+        
+            let printPageRenderer = CustomPrintPageRenderer()
+     
+            let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+            printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+        
+            let pdfData = NSMutableData()
+        
+            UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+            
+            for i in 0..<printPageRenderer.numberOfPages {
+                UIGraphicsBeginPDFPage()
+                printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            }
+        
+            UIGraphicsEndPDFContext()
+        
+            var pdfFilename = "pdffile.pdf"
+            pdfData.write(toFile: pdfFilename, atomically: true)
+        
+           print("PDF NAME \(pdfFilename)")
+        
+//            var itemsToShare = [AnyHashable]()
+//            itemsToShare.append(pdfData)
+//            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+//            self.present(controller, animated: true) {() -> Void in }
+            
+            
+            return pdfData
+            
+        }
+        
+        catch {print("error")}
+        
+        return NSMutableData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -228,7 +323,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true) //This will hide the keyboard
     }
-
 
 ///////////
 

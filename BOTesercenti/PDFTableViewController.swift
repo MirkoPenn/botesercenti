@@ -8,24 +8,23 @@
 
 import UIKit
 import os.log
+import PDFKit
 
 class PDFTableViewController: UITableViewController {
 
 //    var numberOfPdf: Int = 0
-    var numberOfMonths: Int = 0
+    var numberOfMonths: Int = 1
     var numberOfRowsInSection: [Int] = []
     var dateSet = Set<DateComponents>()
     var titleSectionSet = Set<String>()
     
-    var pdfs = [PDF]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadSamplePDFS()
-        numberOfRowsInSection = [3]
+        pdfs = (UIApplication.shared.delegate as! AppDelegate).loadPDF()!
+        numberOfRowsInSection = [pdfs.count]
         
-        print(titleSectionSet)
+        print(pdfs.first?.name)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +60,7 @@ class PDFTableViewController: UITableViewController {
         
         cell.documentImage.image = #imageLiteral(resourceName: "pdf")
         cell.documentTitle.text = pdfs[indexPath.row].name
+        cell.data = pdfs[indexPath.row].data
         
         var detail = ""
         
@@ -81,28 +81,44 @@ class PDFTableViewController: UITableViewController {
         return "Anno Mese"
     }
     
-    override func tableView(_ tableìView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var pdfData = (tableView.cellForRow(at: indexPath) as! PDFTableViewCell).data!
+        
+        var itemsToShare = [AnyHashable]()
+        itemsToShare.append(pdfData)
+        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        self.present(controller, animated: true) {() -> Void in }
+        
+//
+//        if let url =
+//            {
+//            UIApplication.shared.open(url)
+//        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
     
     
     private func loadSamplePDFS() {
         
         let date = Date()
         
-        guard let pdf1 = PDF(name: "pdf1.pdf", size: "2 MB", date: date) else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        guard let pdf2 = PDF(name: "pdf2.pdf", size: "10 MB", date: date) else {
-            fatalError("Unable to instantiate meal2")
-        }
-        
-        guard let pdf3 = PDF(name: "pdf3.pdf", size: "247 KB", date: date) else {
-            fatalError("Unable to instantiate meal2")
-        }
-        
-        pdfs += [pdf1, pdf2, pdf3]
+//        guard let pdf1 = PDF(name: "pdf1.pdf", size: "2 MB", date: date) else {
+//            fatalError("Unable to instantiate meal1")
+//        }
+//
+//        guard let pdf2 = PDF(name: "pdf2.pdf", size: "10 MB", date: date) else {
+//            fatalError("Unable to instantiate meal2")
+//        }
+//
+//        guard let pdf3 = PDF(name: "pdf3.pdf", size: "247 KB", date: date) else {
+//            fatalError("Unable to instantiate meal2")
+//        }
+//
+//        pdfs += [pdf1, pdf2, pdf3]
         for pdf in pdfs {
             let component = Calendar.current.dateComponents([.year, .month], from: pdf.date)
             dateSet.insert(component)
@@ -116,18 +132,7 @@ class PDFTableViewController: UITableViewController {
     }
  
     
-    private func savePDF() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(pdfs, toFile: PDF.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("PDF successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save pdf...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadPDF() -> [PDF]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: PDF.ArchiveURL.path) as? [PDF]
-    }
+
 
     func giveMonth(month: Int) -> String {
         var monthString = ""

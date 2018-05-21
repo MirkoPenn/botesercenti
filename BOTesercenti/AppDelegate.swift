@@ -10,6 +10,7 @@ import UIKit
 import SparkSDK
 import PushKit
 import UserNotifications
+import os.log
 var sparkSDK: Spark?
 
 
@@ -28,6 +29,9 @@ var loginType: UserLoginType = .None
 var webhookId: String?
 var isRegisterdOnWebHookServer: Bool = false
 var isWebHookCreated: Bool = false
+
+var pdfs = [PDF]()
+
 
 
 enum UserLoginType : Int {
@@ -172,6 +176,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate{
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    public func savePDF() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(pdfs, toFile: PDF.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("PDF successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save pdf...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    public func loadPDF() -> [PDF]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: PDF.ArchiveURL.path) as? [PDF]
     }
     
     

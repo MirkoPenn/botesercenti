@@ -18,6 +18,7 @@
 		20D2DF1D1F034A8A00902BF7 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D2DF1C1F034A8A00902BF7 /* PushKit.framework */; };
 		AC06A62820B2896700593729 /* OperatorCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A62720B2896700593729 /* OperatorCallViewController.swift */; };
 		AC06A62A20B2C59200593729 /* MessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A62920B2C58A00593729 /* MessageTableCell.swift */; };
+		AC06A62C20B2D35400593729 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */; };
 		AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94245220B1CBA30060BDF9 /* KSLogger.swift */; };
 		ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F020B1AFE900B08E2A /* LoginViewController.swift */; };
 		ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* ChatViewController.swift */; };
@@ -56,6 +57,7 @@
 		A5EC2689BD1510DCC34D6D20 /* Pods-SparkBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		AC06A62720B2896700593729 /* OperatorCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorCallViewController.swift; sourceTree = "<group>"; };
 		AC06A62920B2C58A00593729 /* MessageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCell.swift; sourceTree = "<group>"; };
+		AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		AC94245220B1CBA30060BDF9 /* KSLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLogger.swift; sourceTree = "<group>"; };
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		10DBFEFD1F3BE35A00209DEC /* BOTesercenti */ = {
 			isa = PBXGroup;
 			children = (
+				AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */,
 				AC06A62920B2C58A00593729 /* MessageTableCell.swift */,
 				B390C4E220B2AA5F00318360 /* PDF.swift */,
 				B390C4E320B2AA5F00318360 /* PDFTableViewCell.swift */,
@@ -337,6 +340,7 @@
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
 				B390C4E520B2AA5F00318360 /* PDF.swift in Sources */,
 				AC06A62A20B2C59200593729 /* MessageTableCell.swift in Sources */,
+				AC06A62C20B2D35400593729 /* CustomPrintPageRenderer.swift in Sources */,
 				AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
