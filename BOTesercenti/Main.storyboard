@@ -119,13 +119,33 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="4sM-TQ-qZD">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="4sM-TQ-qZD" customClass="MessageTableCell" customModule="BOTesercenti" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4sM-TQ-qZD" id="J6R-oU-HvY">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puX-7h-3jc">
+                                                            <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmH-EL-eIt">
+                                                                    <rect key="frame" x="0.0" y="12" width="170" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cellLabel" destination="CmH-EL-eIt" id="WlH-BT-qlx"/>
+                                                    <outlet property="cellView" destination="puX-7h-3jc" id="TdE-eY-4nS"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -139,7 +159,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="mol-rD-U8q" id="c62-CD-iC9"/>
                         <outlet property="chatView" destination="o1w-SV-qJm" id="sbe-6n-olZ"/>
-                        <outlet property="tableview" destination="mm8-UO-IYL" id="CTl-V3-Aw5"/>
+                        <outlet property="messageTableview" destination="mm8-UO-IYL" id="GmC-6d-pYX"/>
                         <outlet property="textField" destination="WcP-76-G7i" id="Tjg-C7-8cO"/>
                     </connections>
                 </viewController>
@@ -286,13 +306,10 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
+        <image name="chat" width="334" height="334"/>
         <image name="closeCall" width="276" height="276"/>
+        <image name="history" width="120" height="118"/>
         <image name="mute" width="232" height="245"/>
         <image name="operator" width="753" height="849"/>
-=======
-        <image name="chat" width="334" height="334"/>
-        <image name="history" width="120" height="118"/>
->>>>>>> 59c1c4fb60a5b04a22af0e0e2fc53ca51a948dc8
     </resources>
 </document>
