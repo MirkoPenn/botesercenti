@@ -12,17 +12,10 @@ import Alamofire
 import os.log
 
 class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageList.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")!
-        let cell = MessageTableCell(message:messageList[indexPath.row])
-        return cell
-    }
     
-    @IBOutlet weak var tableview: UITableView!
+    
+    @IBOutlet weak var messageTableview: UITableView!
     
     var userId: String?
     
@@ -44,12 +37,15 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(self.callOperator))
-
+    
+        self.messageTableview.rowHeight = UITableViewAutomaticDimension
+        self.messageTableview.estimatedRowHeight = 140
+        
+        messageTableview.separatorStyle = .none
+        
         chatView.isHidden = true
-        tableview.delegate = self
-        tableview.dataSource = self
+        messageTableview.delegate = self
+        messageTableview.dataSource = self
         
         textField.delegate = self
         
@@ -88,7 +84,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                     print(result.data!)
                                                  
                                                     self.messageList.append(message)
-                                                    self.tableview.reloadData()
+                                                    self.messageTableview.reloadData()
                                                     
                                                     var convertedpdf = self.convertHTMLtoPDF(path: result.data!.path)
                                                     
@@ -105,7 +101,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                         } else {
                                             
                                             self.messageList.append(message)
-                                            self.tableview.reloadData()
+                                            self.messageTableview.reloadData()
                                             
                                         }
                                         
@@ -115,13 +111,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                 }else {
                                     
                                     self.messageList.append(message)
-                                    self.tableview.reloadData()
+                                    self.messageTableview.reloadData()
                                     
                                 }
                             } else {
                                 
                                 self.messageList.append(message)
-                                self.tableview.reloadData()
+                                self.messageTableview.reloadData()
                                 
                             }
                             
@@ -204,7 +200,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                 self.roomId = message.roomId!
                 DispatchQueue.main.async {
                 self.messageList.append(message)
-                self.tableview.reloadData()
+                self.messageTableview.reloadData()
                 }
                 break
 //                print("\(message.personEmail): \(message.text)")
@@ -335,6 +331,19 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true) //This will hide the keyboard
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")! as! MessageTableCell
+//        print(cell)
+//        cell.setMessage(message: messageList[indexPath.row])
+        let cell = MessageTableCell(message:messageList[indexPath.row])
+        
+        return cell
     }
 
 ///////////
