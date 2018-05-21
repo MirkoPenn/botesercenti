@@ -21,6 +21,7 @@ class PDFTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         tableView.tableFooterView = UIView()
         if let _ = (UIApplication.shared.delegate as! AppDelegate).loadPDF(){
             pdfs = (UIApplication.shared.delegate as! AppDelegate).loadPDF()!
@@ -132,7 +133,22 @@ class PDFTableViewController: UITableViewController {
         numberOfMonths = dateSet.count
         
     }
- 
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            
+//            pdfs.remove(at: indexPath.row)
+//            (UIApplication.shared.delegate as! AppDelegate).savePDF()
+//            tableView.beginUpdates()
+//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.endUpdates()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
 
 

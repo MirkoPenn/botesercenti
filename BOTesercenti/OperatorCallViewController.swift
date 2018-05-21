@@ -46,7 +46,7 @@ class OperatorCallViewController: UIViewController {
                 case .success(let call):
                     self.currentCall = call
                     call.sendingAudio = true
-                    self.callLabel.text = "Connecting..."
+                    self.callLabel.text = "Connessione..."
                     self.callStateChangeCallBacks(call: call)
                 
                 case .failure(let _):
@@ -97,7 +97,7 @@ class OperatorCallViewController: UIViewController {
             
             self?.activityIndicator.isHidden = true
             self?.contactImage.image = #imageLiteral(resourceName: "operator")
-            self?.callLabel.text = "Operator"
+            self?.callLabel.text = "Operatore"
             self?.timeLabel.text = "00:00"
             self?.muteButton.isHidden = false
             self?.callTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self?.updateTimer), userInfo: nil, repeats: true)
@@ -196,7 +196,7 @@ class OperatorCallViewController: UIViewController {
         let isCurrentCall = (call.uuid.uuidString == self.currentCall?.uuid.uuidString)
         
         self.muteButton.isHidden = true
-        callLabel.text = "Disconnecting..."
+        callLabel.text = "Disconnessione..."
         
         if call.status == .connected {
             if(isCurrentCall){
@@ -208,7 +208,7 @@ class OperatorCallViewController: UIViewController {
 //                    self.dismiss(animated: true, completion: {})
                     print("Call hangup.")
                     self.callTimer?.invalidate()
-                    self.callLabel.text = "Disconnected"
+                    self.callLabel.text = "Disconnesso"
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.popOverDisconnected), userInfo: nil, repeats: false)
                 }
             })
@@ -219,7 +219,7 @@ class OperatorCallViewController: UIViewController {
 //                    self.dismiss(animated: true, completion: {})
                     print("Call rejected.")
                     self.callTimer?.invalidate()
-                    self.callLabel.text = "Disconnected"
+                    self.callLabel.text = "Disconnesso"
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.popOverDisconnected), userInfo: nil, repeats: false)
                 }
             })

@@ -12,23 +12,18 @@ import Alamofire
 import os.log
 
 class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageList.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")!
-        let cell = MessageTableCell(message:messageList[indexPath.row])
-        return cell
-    }
     
-    @IBOutlet weak var tableview: UITableView!
+    
+    @IBOutlet weak var messageTableview: UITableView!
     
     var userId: String?
     
     var roomId: String?
     
     var messageList: [Message] = []
+    
+    var hasLogged: Bool = false
     
     
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -39,15 +34,23 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var sendButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sendButton.layer.cornerRadius = 5
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(callOperator))
-
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    
+        self.messageTableview.rowHeight = UITableViewAutomaticDimension
+        self.messageTableview.estimatedRowHeight = 140
+        
+        messageTableview.separatorStyle = .none
+        
         chatView.isHidden = true
-        tableview.delegate = self
-        tableview.dataSource = self
+        messageTableview.delegate = self
+        messageTableview.dataSource = self
         
         textField.delegate = self
         
@@ -55,6 +58,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
             if error == nil{
                 print("Phone registered")
                 self.chatView.isHidden = false
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(self.callOperator))
                 self.activityIndicator.isHidden = true
                 sparkSDK?.messages.onEvent = { event in
                     switch event{
@@ -74,8 +78,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                         print(file)
                                         
                                         if file.mimeType == "text/html"{
-                                            
-                                            
                                             print("found an html")
                                             
                                             sparkSDK?.messages.downloadFile(file, completionHandler: { (result) in
@@ -83,11 +85,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                 if let _ = result.data {
                                                     
                                                     var pdfName = message.text!
+                                                    pdfName.removeFirst(7)
+                                                    pdfName.removeLast(4)
                                                     
                                                     print(result.data!)
                                                  
                                                     self.messageList.append(message)
-                                                    self.tableview.reloadData()
+                                                    self.messageTableview.reloadData()
                                                     
                                                     var convertedpdf = self.convertHTMLtoPDF(path: result.data!.path)
                                                     
@@ -104,14 +108,24 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                         } else {
                                             
                                             self.messageList.append(message)
-                                            self.tableview.reloadData()
+                                            self.messageTableview.reloadData()
                                             
                                         }
                                         
                                         
                                     }
                                     
+                                }else {
+                                    
+                                    self.messageList.append(message)
+                                    self.messageTableview.reloadData()
+                                    
                                 }
+                            } else {
+                                
+                                self.messageList.append(message)
+                                self.messageTableview.reloadData()
+                                
                             }
                             
                         }
@@ -127,6 +141,17 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y -= 250
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+            self.view.frame.origin.y += 250
+        
+    }
+    
     
     func convertHTMLtoPDF(path: String) -> NSMutableData {
         
@@ -178,7 +203,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     }
     
     @objc func callOperator(){
-        
         performSegue(withIdentifier: "callOperator", sender: nil)
     }
     
@@ -192,7 +216,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                 self.roomId = message.roomId!
                 DispatchQueue.main.async {
                 self.messageList.append(message)
-                self.tableview.reloadData()
+                self.messageTableview.reloadData()
                 }
                 break
 //                print("\(message.personEmail): \(message.text)")
@@ -262,6 +286,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                         if(res.error == nil){
                             print("Webhookserver Register success")
                             isRegisterdOnWebHookServer = true
+
                         }
                     }
                 }
@@ -322,6 +347,38 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true) //This will hide the keyboard
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")! as! MessageTableCell
+//        print(cell)
+//        cell.setMessage(message: messageList[indexPath.row])
+        let cell = MessageTableCell(message:messageList[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let _ = (tableView.cellForRow(at: indexPath) as! MessageTableCell).attachedFile {
+            var pdfData = (tableView.cellForRow(at: indexPath) as! MessageTableCell).attachedFile
+            var itemsToShare = [AnyHashable]()
+            itemsToShare.append(pdfData!)
+            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            self.present(controller, animated: true) {() -> Void in }
+        }
+        
+        //
+        //        if let url =
+        //            {
+        //            UIApplication.shared.open(url)
+        //        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 ///////////
