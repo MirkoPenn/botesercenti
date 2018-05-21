@@ -24,6 +24,8 @@
 		ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* ChatViewController.swift */; };
 		ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB813F220B1AFE900B08E2A /* Main.storyboard */; };
 		B31EAE9220B2F42C00262B80 /* DocumentComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31EAE9120B2F42C00262B80 /* DocumentComposer.swift */; };
+		B31EAE9420B3034200262B80 /* progetto-a-mercato.html in Resources */ = {isa = PBXBuildFile; fileRef = B31EAE9320B3034200262B80 /* progetto-a-mercato.html */; };
+		B31EAE9620B305D600262B80 /* progetto-finanziario.html in Resources */ = {isa = PBXBuildFile; fileRef = B31EAE9520B305D600262B80 /* progetto-finanziario.html */; };
 		B390C4DF20B2A81E00318360 /* Animation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B390C4DD20B2A81E00318360 /* Animation.xcassets */; };
 		B390C4E020B2A81E00318360 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4DE20B2A81E00318360 /* AnimationView.swift */; };
 		B390C4E420B2AA5F00318360 /* PDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */; };
@@ -64,6 +66,8 @@
 		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		ACB813F220B1AFE900B08E2A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B31EAE9120B2F42C00262B80 /* DocumentComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentComposer.swift; sourceTree = "<group>"; };
+		B31EAE9320B3034200262B80 /* progetto-a-mercato.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "progetto-a-mercato.html"; path = "../../progetto-a-mercato.html"; sourceTree = "<group>"; };
+		B31EAE9520B305D600262B80 /* progetto-finanziario.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "progetto-finanziario.html"; path = "../../progetto-finanziario.html"; sourceTree = "<group>"; };
 		B390C4DD20B2A81E00318360 /* Animation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Animation.xcassets; sourceTree = "<group>"; };
 		B390C4DE20B2A81E00318360 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				B31EAE9120B2F42C00262B80 /* DocumentComposer.swift */,
+				B31EAE9320B3034200262B80 /* progetto-a-mercato.html */,
+				B31EAE9520B305D600262B80 /* progetto-finanziario.html */,
 				AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */,
 				AC06A62920B2C58A00593729 /* MessageTableCell.swift */,
 				B390C4E220B2AA5F00318360 /* PDF.swift */,
@@ -247,10 +253,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31EAE9420B3034200262B80 /* progetto-a-mercato.html in Resources */,
 				ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */,
 				10DBFF331F3BE35A00209DEC /* Assets.xcassets in Resources */,
 				B390C4DF20B2A81E00318360 /* Animation.xcassets in Resources */,
 				10DBFF341F3BE35A00209DEC /* LaunchScreen.storyboard in Resources */,
+				B31EAE9620B305D600262B80 /* progetto-finanziario.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

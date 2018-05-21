@@ -23,77 +23,76 @@ class DocumentComposer: NSObject {
             var htmlContent = try String(contentsOfFile: pathToMercatoHTMLTemplate!)
             //replace all occurrencies
             
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#RIUNIONE-1#", with: "21 Aprile 2018"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#RIUNIONE0#", with: "Francesco Falaschi"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ESITI_ANALISI1#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#SPUNTATIPO2", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#SPUNTATIPO3#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ENTE4#", with: "VarGroup"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#SCADENZA5#", with: "6 Giugno 2018"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#MISURA6#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#TITOLO7#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "ACRONIMO8#", with: "ACR"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PROFILO9#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#GESTIONESPUNTA10#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#GESTIONESPUNTA11#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PARTNER12#", with: "Cisco"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#FINANZIAMENTO13#", with: "10.000"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#COFINANZIAMENTO14#", with: "5.000"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ORE15#", with: "125"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ORESTAGE16#", with: "250"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#TIPO17#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#DURATA18#", with: "6"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NUMERO19#", with: "100"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#INIZIO20#", with: "3 Maggio 2018"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ESITO21#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE22#", with: "Specifiche del progetto da rielaborare."))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PROGETTO23#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PROGETTO24#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#SPECIFICHE25#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#DATA#", with: "21/05/1995"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#RISORSEINTERNE27#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#RISORSEESTERNE28#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#DEFINIZIONE29#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#DOTAZIONE30#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ARTICOLAZIONE31#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ESITO32#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE33#", with: "Progetto da presentare. Completo."))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PRESENTARE34#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NONPRESENTARE35#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#SPECIFICHE36#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#AMMISSIBILE38#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NONAMMISSIBILE39#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE41#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#AEP42#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ANP43#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NP44#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE46#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ATTIVITA47#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#MATRICOLA48#", with: "N3346435345"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#POSITIVO49#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NEGATIVO50#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE52#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#INCARICATO53#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#TEMPI54#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#AFFISSIONI55#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PUBB56#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#LOCANDINE57#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#SPORTELLO58#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#ALTRO59#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#POSITIVO60#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NEGATIVO61#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE62#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PUBBLICITA63#", with: "X"))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#PUBBLICITA64#", with: ""))
-            htmlContent = htmlContent.replacingOccurrences(of: htmlContent = htmlContent.replacingOccurrences(of: "#NOTE65#", with: ""))
-            
-            
-            
-            
+            htmlContent = htmlContent.replacingOccurrences(of: "#RIUNIONE-1#", with: "21 Aprile 2018")
+            htmlContent = htmlContent.replacingOccurrences(of: "#RIUNIONE0#", with: "Francesco Falaschi")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ESITI_ANALISI1#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPUNTATIPO2", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPUNTATIPO3#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ENTE4#", with: "VarGroup")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SCADENZA5#", with: "6 Giugno 2018")
+            htmlContent = htmlContent.replacingOccurrences(of: "#MISURA6#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#TITOLO7#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "ACRONIMO8#", with: "ACR")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROFILO9#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#GESTIONESPUNTA10#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#GESTIONESPUNTA11#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PARTNER12#", with: "Cisco")
+            htmlContent = htmlContent.replacingOccurrences(of: "#FINANZIAMENTO13#", with: "10.000")
+            htmlContent = htmlContent.replacingOccurrences(of: "#COFINANZIAMENTO14#", with: "5.000")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ORE15#", with: "125")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ORESTAGE16#", with: "250")
+            htmlContent = htmlContent.replacingOccurrences(of: "#TIPO17#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DURATA18#", with: "6")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NUMERO19#", with: "100")
+            htmlContent = htmlContent.replacingOccurrences(of: "#INIZIO20#", with: "3 Maggio 2018")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ESITO21#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE22#", with: "Specifiche del progetto da rielaborare.")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROGETTO23#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROGETTO24#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPECIFICHE25#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DATA#", with: "21/05/1995")
+            htmlContent = htmlContent.replacingOccurrences(of: "#RISORSEINTERNE27#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#RISORSEESTERNE28#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DEFINIZIONE29#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DOTAZIONE30#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ARTICOLAZIONE31#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ESITO32#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE33#", with: "Progetto da presentare. Completo.")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PRESENTARE34#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NONPRESENTARE35#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPECIFICHE36#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#AMMISSIBILE38#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NONAMMISSIBILE39#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE41#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#AEP42#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ANP43#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NP44#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE46#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ATTIVITA47#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#MATRICOLA48#", with: "N3346435345")
+            htmlContent = htmlContent.replacingOccurrences(of: "#POSITIVO49#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NEGATIVO50#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE52#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#INCARICATO53#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#TEMPI54#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#AFFISSIONI55#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PUBB56#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#LOCANDINE57#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPORTELLO58#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ALTRO59#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#POSITIVO60#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NEGATIVO61#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE62#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PUBBLICITA63#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PUBBLICITA64#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE65#", with: "")
+            // The HTML code is ready.
+            return htmlContent
             
         } catch {
             print("Unable to open and use HTML template files.")
         }
+        return nil
     }
     
     func renderHTML2() -> String! {
@@ -101,10 +100,68 @@ class DocumentComposer: NSObject {
             var htmlContent = try String(contentsOfFile: pathToFinanziarioHTMLTemplate!)
             //replace all occurrencies
             
+            htmlContent = htmlContent.replacingOccurrences(of: "#ANNO1#", with: "2001")
+            htmlContent = htmlContent.replacingOccurrences(of: "#TITOLO2#", with: "Gianni Rossi")
+            htmlContent = htmlContent.replacingOccurrences(of:"#PROFILO4#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#OBIETTIVI5#", with: "ingegnere")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DEST6#", with: "comune Bologna")
+            htmlContent = htmlContent.replacingOccurrences(of: "#CONTENUTI7#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DOCENTI8#", with: "Simona Renna")
+            htmlContent = htmlContent.replacingOccurrences(of: "#TEMPI10#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#AFFISSIONI11#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PUBBLICAZIONI12#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#LOCANDINE13#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPORTELLO14#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ALTRO15#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#LOCALI16#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#AULA18#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#VIDEO19#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#AULA20#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#LAVAGNA21#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#LAB22#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#LAVAGNA23#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ALTRO24#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ALTRO25#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#CONSUMO26#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DISPENSE28#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#CARTELLINE29#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ALTRO30#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#METODI31#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#METODI32#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#METODI33#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#FREQUENZA34#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#QUALIFICA35#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#SPEC36#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PERF37#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PRODMAT38", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#COSTI39#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE40#", with: "2414")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ESITO41#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE42#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROG43#", with: "X")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROG44# ", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROG45#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE46#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#ESITO47#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE48#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROG49# ", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROG50# ", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#PROG51#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#APPROVATO52#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#APPROVATO53#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE54#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#POSITIVO55#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NEGATIVO56#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#NOTE57#", with: "")
+            htmlContent = htmlContent.replacingOccurrences(of: "#DATA#", with: "21/05/2018")
+            
+            // The HTML code is ready.
+            return htmlContent
             
         } catch {
             print("Unable to open and use HTML template files.")
         }
+        return nil
     }
     
     //    func renderInvoice(invoiceNumber: String, invoiceDate: String, itemsA: [[String: String]], itemsS: [[String: String]]) -> String! {
@@ -115,31 +172,31 @@ class DocumentComposer: NSObject {
     //
     //            // Replace all the placeholders with real values except for the items.
     //            // The logo image.
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: logoImageURL)
+    //           "#LOGO_IMAGE#", with: logoImageURL)
     //
     //            // Invoice number.
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#INVOICE_NUMBER#", with: invoiceNumber)
+    //           "#INVOICE_NUMBER#", with: invoiceNumber)
     //
     //            // Invoice date.
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#INVOICE_DATE#", with: invoiceDate)
+    //           "#INVOICE_DATE#", with: invoiceDate)
     //
     //            // Due date (we leave it blank by default).
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#DUE_DATE#", with: dueDate)
+    //           "#DUE_DATE#", with: dueDate)
     //
     //            // Sender info.
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#SENDER_INFO#", with: senderInfo)
+    //           "#SENDER_INFO#", with: senderInfo)
     //
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#ACTIVE#", with: NSLocalizedString("Active Prescriptions (Quantity)", comment: ""))
+    //           "#ACTIVE#", with: NSLocalizedString("Active Prescriptions (Quantity)", comment: "")
     //
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#SUSPENDED#", with: NSLocalizedString("Suspended Prescriptions (Quantity)", comment: ""))
+    //           "#SUSPENDED#", with: NSLocalizedString("Suspended Prescriptions (Quantity)", comment: "")
     //
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#FREQUENCY#", with: NSLocalizedString("Frequency", comment: ""))
+    //           "#FREQUENCY#", with: NSLocalizedString("Frequency", comment: "")
     //
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#DATE#", with: NSLocalizedString("Date", comment: ""))
+    //           "#DATE#", with: NSLocalizedString("Date", comment: "")
     //
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#START#", with: NSLocalizedString("Start", comment: ""))
+    //           "#START#", with: NSLocalizedString("Start", comment: "")
     //
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#END#", with: NSLocalizedString("End", comment: ""))
+    //           "#END#", with: NSLocalizedString("End", comment: "")
     //            // The invoice items will be added by using a loop.
     //            var itemsActivated = ""
     //
@@ -171,7 +228,7 @@ class DocumentComposer: NSObject {
     //            }
     //
     //            // Set the items.
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEMSACTIVATED#", with: itemsActivated)
+    //           "#ITEMSACTIVATED#", with: itemsActivated)
     //
     //            var itemsSuspended = ""
     //            for i in 0..<itemsS.count {
@@ -200,7 +257,7 @@ class DocumentComposer: NSObject {
     //            }
     //
     //            // Set the items.
-    //            HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEMSSUSPENDED#", with: itemsSuspended)
+    //           "#ITEMSSUSPENDED#", with: itemsSuspended)
     //
     //            // The HTML code is ready.
     //            return HTMLContent
@@ -220,7 +277,7 @@ class DocumentComposer: NSObject {
     //        let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
     //
     ////        pdfFilename = "Pet Therapy.pdf"
-    //        pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/PetTherapy.pdf"
+    //        pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir()/PetTherapy.pdf"
     //        pdfData?.write(toFile: pdfFilename, atomically: true)
     //
     //        print(pdfFilename)
@@ -234,7 +291,7 @@ class DocumentComposer: NSObject {
     //        UIGraphicsBeginPDFContextToData(data, CGRect.zero, nil)
     //        for i in 0..<printPageRenderer.numberOfPages {
     //            UIGraphicsBeginPDFPage()
-    //            printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+    //            printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds()
     //        }
     //
     //        UIGraphicsEndPDFContext()s
@@ -243,50 +300,3 @@ class DocumentComposer: NSObject {
     //    }
     
 }
-
-enum ConstantsHTML1 {
-    static let a1: String = ""
-    static let a2: String = ""
-    static let a3: String = ""
-    static let a4: String = ""
-    static let a5: String = ""
-    static let a6: String = ""
-    static let a7: String = ""
-    static let a8: String = ""
-    static let a9: String = ""
-    static let a10: String = ""
-    static let a11: String = ""
-    static let a12: String = ""
-    static let a13: String = ""
-    static let a14: String = ""
-    static let a15: String = ""
-    static let a16: String = ""
-    static let a17: String = ""
-    static let a18: String = ""
-    static let a19: String = ""
-    static let a20: String = ""
-    static let a21: String = ""
-    static let a22: String = ""
-    static let a23: String = ""
-    static let a24: String = ""
-    static let a25: String = ""
-    static let a26: String = ""
-    static let a27: String = ""
-    static let a28: String = ""
-    static let a28: String = ""
-    static let a30: String = ""
-    static let a31: String = ""
-    static let a32: String = ""
-    static let a33: String = ""
-    static let a34: String = ""
-    static let a35: String = ""
-    static let a36: String = ""
-    static let a37: String = ""
-    static let a38: String = ""
-    static let a39: String = ""
-}
-
-enum ConstantsHTML2 {
-    
-}
-
