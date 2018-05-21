@@ -23,10 +23,20 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationController?.navigationBar.isHidden = true
         botAnimationView.add_2Animation()
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        chatButton.isHidden = false
+        historyButton.isHidden = false
+        activityIndicator.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
