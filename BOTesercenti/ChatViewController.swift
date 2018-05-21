@@ -84,7 +84,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                     print(result.data!)
                                                  
                                                     self.messageList.append(message)
-                                                    self.tableview.reloadData()
+                                                    self.messageTableview.reloadData()
                                                     
                                                     var convertedpdf = self.convertHTMLtoPDF(path: result.data!.path)
                                                     
@@ -101,7 +101,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                         } else {
                                             
                                             self.messageList.append(message)
-                                            self.tableview.reloadData()
+                                            self.messageTableview.reloadData()
                                             
                                         }
                                         
@@ -111,13 +111,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                 }else {
                                     
                                     self.messageList.append(message)
-                                    self.tableview.reloadData()
+                                    self.messageTableview.reloadData()
                                     
                                 }
                             } else {
                                 
                                 self.messageList.append(message)
-                                self.tableview.reloadData()
+                                self.messageTableview.reloadData()
                                 
                             }
                             
