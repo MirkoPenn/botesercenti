@@ -82,6 +82,8 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                 if let _ = result.data {
                                                     
                                                     var pdfName = message.text!
+                                                    pdfName.removeFirst(7)
+                                                    pdfName.removeLast(4)
                                                     
                                                     print(result.data!)
                                                  
@@ -357,6 +359,25 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         let cell = MessageTableCell(message:messageList[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let _ = (tableView.cellForRow(at: indexPath) as! MessageTableCell).attachedFile {
+            var pdfData = (tableView.cellForRow(at: indexPath) as! MessageTableCell).attachedFile
+            var itemsToShare = [AnyHashable]()
+            itemsToShare.append(pdfData!)
+            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            self.present(controller, animated: true) {() -> Void in }
+        }
+        
+        //
+        //        if let url =
+        //            {
+        //            UIApplication.shared.open(url)
+        //        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 ///////////

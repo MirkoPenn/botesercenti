@@ -19,6 +19,9 @@
 		AC06A62820B2896700593729 /* OperatorCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A62720B2896700593729 /* OperatorCallViewController.swift */; };
 		AC06A62A20B2C59200593729 /* MessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A62920B2C58A00593729 /* MessageTableCell.swift */; };
 		AC06A62C20B2D35400593729 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */; };
+		AC06A62E20B2FF0100593729 /* opsfocato.png in Resources */ = {isa = PBXBuildFile; fileRef = AC06A62D20B2FEFC00593729 /* opsfocato.png */; };
+		AC06A63020B2FF1400593729 /* faccina.png in Resources */ = {isa = PBXBuildFile; fileRef = AC06A62F20B2FF1300593729 /* faccina.png */; };
+		AC06A63220B2FFBF00593729 /* firstview.png in Resources */ = {isa = PBXBuildFile; fileRef = AC06A63120B2FFBE00593729 /* firstview.png */; };
 		AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94245220B1CBA30060BDF9 /* KSLogger.swift */; };
 		ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F020B1AFE900B08E2A /* LoginViewController.swift */; };
 		ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* ChatViewController.swift */; };
@@ -58,6 +61,9 @@
 		AC06A62720B2896700593729 /* OperatorCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorCallViewController.swift; sourceTree = "<group>"; };
 		AC06A62920B2C58A00593729 /* MessageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCell.swift; sourceTree = "<group>"; };
 		AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		AC06A62D20B2FEFC00593729 /* opsfocato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = opsfocato.png; sourceTree = "<group>"; };
+		AC06A62F20B2FF1300593729 /* faccina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faccina.png; sourceTree = "<group>"; };
+		AC06A63120B2FFBE00593729 /* firstview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstview.png; sourceTree = "<group>"; };
 		AC94245220B1CBA30060BDF9 /* KSLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLogger.swift; sourceTree = "<group>"; };
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 				10DBFF001F3BE35A00209DEC /* LaunchScreen.storyboard */,
 				10DBFF5D1F3BE3DB00209DEC /* BOTesercenti-Bridging-Header.h */,
 				10DBFEFF1F3BE35A00209DEC /* Assets.xcassets */,
+				AC06A63120B2FFBE00593729 /* firstview.png */,
+				AC06A62F20B2FF1300593729 /* faccina.png */,
+				AC06A62D20B2FEFC00593729 /* opsfocato.png */,
 				10DBFF1C1F3BE35A00209DEC /* Info.plist */,
 				ACB813F120B1AFE900B08E2A /* ChatViewController.swift */,
 				ACB813F020B1AFE900B08E2A /* LoginViewController.swift */,
@@ -208,7 +217,7 @@
 				TargetAttributes = {
 					206281F51ED1782C007E28F9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = F27C7JQD27;
+						DevelopmentTeam = 6824YNJ23L;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -245,6 +254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */,
+				AC06A63020B2FF1400593729 /* faccina.png in Resources */,
+				AC06A62E20B2FF0100593729 /* opsfocato.png in Resources */,
+				AC06A63220B2FFBF00593729 /* firstview.png in Resources */,
 				10DBFF331F3BE35A00209DEC /* Assets.xcassets in Resources */,
 				B390C4DF20B2A81E00318360 /* Animation.xcassets in Resources */,
 				10DBFF341F3BE35A00209DEC /* LaunchScreen.storyboard in Resources */,
@@ -475,11 +487,11 @@
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F27C7JQD27;
+				DEVELOPMENT_TEAM = 6824YNJ23L;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenticarlo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercentimirko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -497,11 +509,11 @@
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F27C7JQD27;
+				DEVELOPMENT_TEAM = 6824YNJ23L;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenticarlo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercentimirko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
