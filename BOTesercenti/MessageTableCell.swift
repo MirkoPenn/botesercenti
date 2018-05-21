@@ -6,6 +6,7 @@ class MessageTableCell : UITableViewCell {
     var isUser: Bool?
     var messageShapeLayer: CAShapeLayer?
     
+    var attachedFile: NSMutableData?
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var cellLabel: UILabel!
@@ -25,7 +26,31 @@ class MessageTableCell : UITableViewCell {
         
         self.textLabel?.numberOfLines = 0
         self.textLabel?.textColor = UIColor.white
-       
+        
+        if let _ = message.files{
+            if(!(message.files?.isEmpty)!){
+                print("found files")
+                for file in message.files! {
+                    if file.mimeType == "text/html"{
+                        
+                        sparkSDK?.messages.downloadFile(file, completionHandler: { (result) in
+                            
+                            if let _ = result.data {
+                                
+                                var pdfName = message.text!
+                                
+                                print(result.data!)
+                                
+                                self.attachedFile = self.convertHTMLtoPDF(path: result.data!.path)
+                                
+                                
+                            }
+                            
+                        })
+                    }
+                }
+            }
+        }
         
     }
     
@@ -39,6 +64,50 @@ class MessageTableCell : UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func convertHTMLtoPDF(path: String) -> NSMutableData {
+        
+        
+        do {
+            
+            var HTMLContent = try String(contentsOfFile: path)
+            
+            let printPageRenderer = CustomPrintPageRenderer()
+            
+            let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+            printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+            
+            let pdfData = NSMutableData()
+            
+            UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+            
+            for i in 0..<printPageRenderer.numberOfPages {
+                UIGraphicsBeginPDFPage()
+                printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            }
+            
+            UIGraphicsEndPDFContext()
+            
+            var pdfFilename = "pdffile.pdf"
+            pdfData.write(toFile: pdfFilename, atomically: true)
+            
+            print("PDF NAME \(pdfFilename)")
+            
+            //            var itemsToShare = [AnyHashable]()
+            //            itemsToShare.append(pdfData)
+            //            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            //            self.present(controller, animated: true) {() -> Void in }
+            
+            
+            return pdfData
+            
+        }
+            
+        catch {print("error")}
+        
+        return NSMutableData()
+        
     }
     
 
