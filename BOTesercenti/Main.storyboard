@@ -22,15 +22,6 @@
                                 <rect key="frame" x="177" y="482" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXX-OV-FTW">
-                                <rect key="frame" x="47" y="482" width="94" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="chat"/>
-                                <connections>
-                                    <action selector="loginAndStartRoomWithSender:" destination="PmQ-tR-PwC" eventType="touchUpInside" id="dP9-UV-5Xi"/>
-                                    <segue destination="sUp-NY-jwW" kind="show" id="ZBb-1V-AiI"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lad-uZ-kme" customClass="AnimationView" customModule="BOTesercenti" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="110" width="343" height="383"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,11 +29,27 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiW-qc-c0k">
                                 <rect key="frame" x="233" y="482" width="95" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="history"/>
+                                <state key="normal" image="crono"/>
                                 <connections>
                                     <segue destination="XKz-Jq-KWP" kind="show" id="TEv-UI-71B"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXX-OV-FTW">
+                                <rect key="frame" x="62" y="498" width="59" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="message"/>
+                                <connections>
+                                    <action selector="loginAndStartRoomWithSender:" destination="PmQ-tR-PwC" eventType="touchUpInside" id="dP9-UV-5Xi"/>
+                                    <segue destination="sUp-NY-jwW" kind="show" id="ZBb-1V-AiI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ciao! Cosa ti serve?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzW-f3-snX">
+                                <rect key="frame" x="16" y="76" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0078431372549019607" green="0.54117647058823526" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="aFZ-oP-EqT"/>
@@ -284,9 +291,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chat" width="334" height="334"/>
         <image name="closeCall" width="276" height="276"/>
-        <image name="history" width="120" height="118"/>
+        <image name="crono" width="1379" height="1346"/>
+        <image name="message" width="2080" height="2189"/>
         <image name="mute" width="475" height="483"/>
         <image name="operatoreBlur" width="376" height="424"/>
     </resources>

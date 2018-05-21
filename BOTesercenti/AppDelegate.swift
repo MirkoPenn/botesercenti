@@ -55,6 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate{
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
 
+        
+        let navStyles = UINavigationBar.appearance()
+        // This will set the color of the text for the back buttons.
+        navStyles.tintColor = .white
+        // This will set the background color for navBar
+        navStyles.barTintColor = UIColor(red:0.01, green:0.54, blue:0.34, alpha:1.0)
+        
         return true
         
     }

@@ -30,6 +30,8 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     var messageList: [Message] = []
     
+    var hasLogged: Bool = false
+    
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
@@ -43,7 +45,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         super.viewDidLoad()
         
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(callOperator))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(self.callOperator))
 
         chatView.isHidden = true
         tableview.delegate = self
@@ -55,6 +57,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
             if error == nil{
                 print("Phone registered")
                 self.chatView.isHidden = false
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(self.callOperator))
                 self.activityIndicator.isHidden = true
                 sparkSDK?.messages.onEvent = { event in
                     switch event{
@@ -74,8 +77,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                         print(file)
                                         
                                         if file.mimeType == "text/html"{
-                                            
-                                            
                                             print("found an html")
                                             
                                             sparkSDK?.messages.downloadFile(file, completionHandler: { (result) in
@@ -111,7 +112,17 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                         
                                     }
                                     
+                                }else {
+                                    
+                                    self.messageList.append(message)
+                                    self.tableview.reloadData()
+                                    
                                 }
+                            } else {
+                                
+                                self.messageList.append(message)
+                                self.tableview.reloadData()
+                                
                             }
                             
                         }
@@ -178,8 +189,9 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     }
     
     @objc func callOperator(){
-        
-        performSegue(withIdentifier: "callOperator", sender: nil)
+        if(hasLogged){
+            performSegue(withIdentifier: "callOperator", sender: nil)
+        }
     }
     
     
@@ -262,6 +274,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                         if(res.error == nil){
                             print("Webhookserver Register success")
                             isRegisterdOnWebHookServer = true
+
                         }
                     }
                 }
