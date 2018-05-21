@@ -13,23 +13,23 @@
         <!--BOTesercenti-->
         <scene sceneID="Vom-7L-lyh">
             <objects>
-                <viewController title="BOTesercenti" id="PmQ-tR-PwC" customClass="LoginViewController" customModule="BuBOTesercentiBOTesercentiies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BOTesercenti" id="PmQ-tR-PwC" customClass="LoginViewController" customModule="BOTesercenti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OXd-NF-L7x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiW-qc-c0k">
-                                <rect key="frame" x="115" y="459" width="145" height="30"/>
+                                <rect key="frame" x="115" y="597" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Document history"/>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2JU-LN-e2A">
-                                <rect key="frame" x="177" y="418" width="20" height="20"/>
+                                <rect key="frame" x="177" y="556" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXX-OV-FTW">
-                                <rect key="frame" x="115" y="380" width="145" height="30"/>
+                                <rect key="frame" x="115" y="518" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Chat with the bot"/>
@@ -38,20 +38,18 @@
                                     <segue destination="sUp-NY-jwW" kind="show" id="ZBb-1V-AiI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BOTesercenti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hu-sg-qES">
-                                <rect key="frame" x="93" y="179" width="188" height="40"/>
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lad-uZ-kme" customClass="AnimationView" customModule="BOTesercenti" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="343" height="383"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.54117647058823526" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="aFZ-oP-EqT"/>
                     </view>
                     <navigationItem key="navigationItem" id="UsR-56-ivp"/>
                     <connections>
                         <outlet property="activityIndicator" destination="2JU-LN-e2A" id="KXV-3r-e11"/>
+                        <outlet property="botAnimationView" destination="lad-uZ-kme" id="EWn-oY-miK"/>
                         <outlet property="chatButton" destination="rXX-OV-FTW" id="8Lb-3V-rur"/>
                         <outlet property="historyButton" destination="FiW-qc-c0k" id="yje-Tc-zum"/>
                     </connections>
@@ -63,7 +61,7 @@
         <!--Chatroom-->
         <scene sceneID="F6P-th-5rr">
             <objects>
-                <viewController storyboardIdentifier="chatViewController" title="Chatroom" id="sUp-NY-jwW" customClass="ChatViewController" customModule="BuBOTesercentiBOTesercentiies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatViewController" title="Chatroom" id="sUp-NY-jwW" customClass="ChatViewController" customModule="BOTesercenti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBW-Sn-6Di">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
