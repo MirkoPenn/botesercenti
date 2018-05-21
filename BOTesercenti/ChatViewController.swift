@@ -34,6 +34,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         self.messageTableview.rowHeight = UITableViewAutomaticDimension
         self.messageTableview.estimatedRowHeight = 140
         
@@ -227,10 +228,10 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")! as! MessageTableCell
-        print(cell)
-        cell.setMessage(message: messageList[indexPath.row])
-        //let cell = MessageTableCell(message:messageList[indexPath.row])
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell")! as! MessageTableCell
+//        print(cell)
+//        cell.setMessage(message: messageList[indexPath.row])
+        let cell = MessageTableCell(message:messageList[indexPath.row])
         
         return cell
     }
