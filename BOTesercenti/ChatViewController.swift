@@ -43,7 +43,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
                 sparkSDK?.messages.onEvent = { event in
                     switch event{
                     case .messageReceived(let message):
-                        
                         print("\(message.personEmail): \(message.text)")
                         self.messageLabel.text?.append("\nBot: \(message.text ?? "ERROR")")
                         

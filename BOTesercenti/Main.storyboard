@@ -105,6 +105,14 @@
                                             <action selector="sendMessageButton:" destination="sUp-NY-jwW" eventType="touchUpInside" id="bFr-Pq-Noa"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geN-Ox-iIt">
+                                        <rect key="frame" x="329" y="8" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Call"/>
+                                        <connections>
+                                            <segue destination="ixn-iS-MZy" kind="show" id="hjp-S0-b8c"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -122,6 +130,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4T-7F-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1293.5999999999999" y="-246.02698650674665"/>
+        </scene>
+        <!--Operator call-->
+        <scene sceneID="eQY-Hc-10A">
+            <objects>
+                <viewController title="Operator call" id="ixn-iS-MZy" customClass="OperatorCallViewController" customModule="BOTesercenti" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oSp-jl-Vwg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching for an operator..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5h-lR-Kr2">
+                                <rect key="frame" x="16" y="162" width="343" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="a0v-hQ-Qa8">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y0-lG-pA5">
+                                <rect key="frame" x="138" y="218" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00y-5h-PBV">
+                                <rect key="frame" x="114" y="481" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Disconnect">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDisconnectButton:" destination="ixn-iS-MZy" eventType="touchUpInside" id="TKw-uZ-b7m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MMe-HQ-C6a"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="a0v-hQ-Qa8" id="EgZ-Be-NpZ"/>
+                        <outlet property="callLabel" destination="U5h-lR-Kr2" id="m9i-nx-Wn5"/>
+                        <outlet property="disconnectButton" destination="00y-5h-PBV" id="cC5-kK-341"/>
+                        <outlet property="timeLabel" destination="4Y0-lG-pA5" id="H5s-EK-gSd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxn-rH-zmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2389.5999999999999" y="-246.02698650674665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K0F-tz-9Ag">

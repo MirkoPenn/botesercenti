@@ -49,6 +49,7 @@
 		7FB91ACB05D7C24B814D146E /* Pods-BOTesercenti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BOTesercenti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BOTesercenti/Pods-BOTesercenti.debug.xcconfig"; sourceTree = "<group>"; };
 		861588002A38F8E4EAC28858 /* Pods-SparkBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		A5EC2689BD1510DCC34D6D20 /* Pods-SparkBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparkBuddy/Pods-SparkBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		AC06A62720B2896700593729 /* OperatorCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorCallViewController.swift; sourceTree = "<group>"; };
 		AC94245220B1CBA30060BDF9 /* KSLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLogger.swift; sourceTree = "<group>"; };
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 				B36F8A0320B29D450097B9F7 /* Animation.xcassets */,
 				B36F8A0420B29D450097B9F7 /* AnimationView.swift */,
 				AC94245220B1CBA30060BDF9 /* KSLogger.swift */,
+				AC06A62720B2896700593729 /* OperatorCallViewController.swift */,
 			);
 			path = BOTesercenti;
 			sourceTree = "<group>";
@@ -309,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC06A62820B2896700593729 /* OperatorCallViewController.swift in Sources */,
 				ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */,
 				10DBFF321F3BE35A00209DEC /* AppDelegate.swift in Sources */,
 				10372ED2208D6DBA000B9300 /* MessageParser.m in Sources */,
