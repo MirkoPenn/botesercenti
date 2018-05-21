@@ -87,14 +87,14 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9b-22-GWe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9b-22-GWe">
                                 <rect key="frame" x="73" y="578" width="37" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Moduli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ca-bd-XDM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moduli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ca-bd-XDM">
                                 <rect key="frame" x="254" y="578" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -206,26 +206,12 @@
                         <outlet property="messageTableview" destination="mm8-UO-IYL" id="GmC-6d-pYX"/>
                         <outlet property="sendButton" destination="tqD-ow-TQC" id="V0J-9X-93X"/>
                         <outlet property="textField" destination="WcP-76-G7i" id="Tjg-C7-8cO"/>
-                        <segue destination="ixn-iS-MZy" kind="show" identifier="callOperator" id="sxB-Ln-x8h"/>
+                        <segue destination="R2u-IX-4iA" kind="show" identifier="callOperator" id="Oda-0R-ijb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4T-7F-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1293.5999999999999" y="-246.02698650674665"/>
-        </scene>
-        <!--Operator call-->
-        <scene sceneID="eQY-Hc-10A">
-            <objects>
-                <viewController title="Operator call" id="ixn-iS-MZy" customClass="OperatorCallViewController" customModule="BOTesercenti" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PXt-m6-Ili">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxn-rH-zmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2389.5999999999999" y="-246.02698650674665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K0F-tz-9Ag">
@@ -299,10 +285,78 @@
             </objects>
             <point key="canvasLocation" x="297" y="565"/>
         </scene>
+        <!--Operator call-->
+        <scene sceneID="5EW-pW-uha">
+            <objects>
+                <viewController title="Operator call" id="R2u-IX-4iA" customClass="OperatorCallViewController" customModule="BOTesercenti" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vde-FB-qrp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atf-sz-QyZ">
+                                <rect key="frame" x="148" y="530" width="78" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="closeCall">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDisconnectButton:" destination="R2u-IX-4iA" eventType="touchUpInside" id="l2t-RB-EsG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="operatoreBlur" translatesAutoresizingMaskIntoConstraints="NO" id="smR-uh-9Qz">
+                                <rect key="frame" x="67" y="206" width="240" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WvV-hg-tKr">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching for an operator..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NES-Ez-sSX">
+                                <rect key="frame" x="16" y="64" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwP-wm-bNT">
+                                <rect key="frame" x="277" y="530" width="82" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="mute"/>
+                                <connections>
+                                    <action selector="onMuteButton:" destination="R2u-IX-4iA" eventType="touchUpInside" id="vNs-sK-7lK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYQ-ie-ODU">
+                                <rect key="frame" x="138" y="127" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0078431372550000003" green="0.54117647059999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XzE-Wc-Fh7"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="WvV-hg-tKr" id="VAM-Je-0Yv"/>
+                        <outlet property="callLabel" destination="NES-Ez-sSX" id="L5N-rB-lgc"/>
+                        <outlet property="contactImage" destination="smR-uh-9Qz" id="8Bm-98-PDT"/>
+                        <outlet property="disconnectButton" destination="atf-sz-QyZ" id="hQO-Yj-7On"/>
+                        <outlet property="muteButton" destination="XwP-wm-bNT" id="9b4-Tb-x8t"/>
+                        <outlet property="timeLabel" destination="XYQ-ie-ODU" id="47w-8y-0fo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WdB-IN-xYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137" y="-259"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="closeCall" width="276" height="276"/>
         <image name="crono" width="1379" height="1346"/>
         <image name="firstview.png" width="375" height="667"/>
         <image name="message" width="2080" height="2189"/>
+        <image name="mute" width="475" height="483"/>
+        <image name="operatoreBlur" width="376" height="424"/>
     </resources>
 </document>
