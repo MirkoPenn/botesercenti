@@ -33,6 +33,11 @@ class MessageTableCell : UITableViewCell {
                 for file in message.files! {
                     if file.mimeType == "text/html"{
                         
+                        var textToAdd = message.text!
+                        textToAdd.removeFirst(7)
+                        textToAdd.removeLast(4)
+                        self.textLabel?.text = "Bot: " + textToAdd
+                        
                         sparkSDK?.messages.downloadFile(file, completionHandler: { (result) in
                             
                             if let _ = result.data {
