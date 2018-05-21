@@ -93,7 +93,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                                                     
                                                     pdfName.removeLast(4)
                                                     
-                                                    pdfs.append(PDF(name: pdfName, size: "30mb", date: Date(), data: convertedpdf)!)
+                                                    pdfs.append(PDF(name: pdfName, size: String(ByteCountFormatter().string(fromByteCount: Int64(convertedpdf.length))), date: Date(), data: convertedpdf)!)
                                                     
                                                     (UIApplication.shared.delegate as! AppDelegate).savePDF()
                                                      

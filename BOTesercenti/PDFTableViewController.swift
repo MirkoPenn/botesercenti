@@ -20,11 +20,13 @@ class PDFTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pdfs = (UIApplication.shared.delegate as! AppDelegate).loadPDF()!
+        
+        tableView.tableFooterView = UIView()
+        if let _ = (UIApplication.shared.delegate as! AppDelegate).loadPDF(){
+            pdfs = (UIApplication.shared.delegate as! AppDelegate).loadPDF()!
+        }
         numberOfRowsInSection = [pdfs.count]
         
-        print(pdfs.first?.name)
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +80,7 @@ class PDFTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         
-        return "Anno Mese"
+        return "Moduli"
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
