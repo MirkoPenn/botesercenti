@@ -156,8 +156,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqD-ow-TQC">
                                         <rect key="frame" x="298" y="540" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="SEND">
+                                        <color key="backgroundColor" red="0.0078431372549019607" green="0.54117647058823526" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Send">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -204,6 +204,7 @@
                         <outlet property="activityIndicator" destination="mol-rD-U8q" id="c62-CD-iC9"/>
                         <outlet property="chatView" destination="o1w-SV-qJm" id="sbe-6n-olZ"/>
                         <outlet property="messageTableview" destination="mm8-UO-IYL" id="GmC-6d-pYX"/>
+                        <outlet property="sendButton" destination="tqD-ow-TQC" id="V0J-9X-93X"/>
                         <outlet property="textField" destination="WcP-76-G7i" id="Tjg-C7-8cO"/>
                         <segue destination="ixn-iS-MZy" kind="show" identifier="callOperator" id="sxB-Ln-x8h"/>
                     </connections>

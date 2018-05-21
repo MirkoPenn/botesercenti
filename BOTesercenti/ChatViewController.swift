@@ -34,9 +34,12 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var sendButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sendButton.layer.cornerRadius = 5
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
@@ -200,9 +203,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     }
     
     @objc func callOperator(){
-        if(hasLogged){
-            performSegue(withIdentifier: "callOperator", sender: nil)
-        }
+        performSegue(withIdentifier: "callOperator", sender: nil)
     }
     
     
