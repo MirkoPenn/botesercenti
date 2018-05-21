@@ -244,9 +244,13 @@ class OperatorCallViewController: UIViewController {
     @IBAction func onMuteButton(_ sender: Any) {
         if let _ = currentCall {
             if (currentCall?.sendingAudio)!{
+                print("Mute")
                 currentCall?.sendingAudio = false
+                muteButton.setImage(#imageLiteral(resourceName: "muteSelected"), for: .normal)
             } else {
+                print("Unmute")
                 currentCall?.sendingAudio = true
+                muteButton.setImage(#imageLiteral(resourceName: "mute"), for: .normal)
             }
         }
     }
