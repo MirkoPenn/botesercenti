@@ -357,6 +357,12 @@ class AnimationView : UIView, CAAnimationDelegate {
 		self.viewsByName["face__root"]?.layer.removeAnimation(forKey: "2_Rotation")
 		self.viewsByName["face__root"]?.layer.removeAnimation(forKey: "2_TranslationY")
 	}
+    
+    func sayHi(){
+        
+        
+        
+    }
 
 	// MARK: CAAnimationDelegate
 	func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {

@@ -17,6 +17,7 @@ class PDF: NSObject, NSCoding {
     var name: String
     var size: String
     var date: Date
+    var data: NSMutableData
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -28,11 +29,12 @@ class PDF: NSObject, NSCoding {
         static let name = "name"
         static let size = "size"
         static let date = "date"
+        static let data = "data"
     }
     
     //MARK: Initialization
     
-    init?(name: String, size: String, date: Date) {
+    init?(name: String, size: String, date: Date, data: NSMutableData) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -43,6 +45,7 @@ class PDF: NSObject, NSCoding {
         self.name = name
         self.size = size
         self.date = date
+        self.data = data
         
     }
     
@@ -52,6 +55,7 @@ class PDF: NSObject, NSCoding {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(size, forKey: PropertyKey.size)
         aCoder.encode(date, forKey: PropertyKey.date)
+        aCoder.encode(data, forKey: PropertyKey.data)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -67,8 +71,10 @@ class PDF: NSObject, NSCoding {
         
         let date = aDecoder.decodeObject(forKey: PropertyKey.date) as? Date
         
+        let data = aDecoder.decodeObject(forKey: PropertyKey.data) as? NSMutableData
+        
         // Must call designated initializer.
-        self.init(name: name, size: size!, date: date!)
+        self.init(name: name, size: size!, date: date!, data: data!)
         
     }
 }

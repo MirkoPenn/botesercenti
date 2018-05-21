@@ -10,6 +10,7 @@ import UIKit
 import SparkSDK
 import PushKit
 import UserNotifications
+import os.log
 var sparkSDK: Spark?
 
 
@@ -28,6 +29,9 @@ var loginType: UserLoginType = .None
 var webhookId: String?
 var isRegisterdOnWebHookServer: Bool = false
 var isWebHookCreated: Bool = false
+
+var pdfs = [PDF]()
+
 
 
 enum UserLoginType : Int {
@@ -51,6 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate{
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
 
+        
+        let navStyles = UINavigationBar.appearance()
+        // This will set the color of the text for the back buttons.
+        navStyles.tintColor = .white
+        // This will set the background color for navBar
+        navStyles.barTintColor = UIColor(red:0.01, green:0.54, blue:0.34, alpha:1.0)
+        
         return true
         
     }
@@ -172,6 +183,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate{
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    public func savePDF() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(pdfs, toFile: PDF.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("PDF successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save pdf...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    public func loadPDF() -> [PDF]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: PDF.ArchiveURL.path) as? [PDF]
     }
     
     

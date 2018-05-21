@@ -22,10 +22,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+
         botAnimationView.add_2Animation()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +88,7 @@ class LoginViewController: UIViewController {
         print("authorizing")
         
         sparkSDK?.people.getMe(completionHandler: { (response) in
-            username = response.result.data!.displayName!
+            username = response.result.data!.displayName ?? "guest"
             userEmail = response.result.data!.emails?.first!
             userProfileId = response.result.data!.id
             

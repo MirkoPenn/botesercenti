@@ -9,6 +9,7 @@
 import UIKit
 import SparkSDK
 import Alamofire
+import os.log
 
 class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     
@@ -21,6 +22,8 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     var roomId: String?
     
     var messageList: [Message] = []
+    
+    var hasLogged: Bool = false
     
     
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -50,6 +53,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
             if error == nil{
                 print("Phone registered")
                 self.chatView.isHidden = false
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(self.callOperator))
                 self.activityIndicator.isHidden = true
                 sparkSDK?.messages.onEvent = { event in
                     switch event{
@@ -72,14 +76,61 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         // Do any additional setup after loading the view.
     }
-
+    
+    func convertHTMLtoPDF(path: String) -> NSMutableData {
+        
+        
+        do {
+        
+            var HTMLContent = try String(contentsOfFile: path)
+        
+            let printPageRenderer = CustomPrintPageRenderer()
+     
+            let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+            printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+        
+            let pdfData = NSMutableData()
+        
+            UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+            
+            for i in 0..<printPageRenderer.numberOfPages {
+                UIGraphicsBeginPDFPage()
+                printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            }
+        
+            UIGraphicsEndPDFContext()
+        
+            var pdfFilename = "pdffile.pdf"
+            pdfData.write(toFile: pdfFilename, atomically: true)
+        
+           print("PDF NAME \(pdfFilename)")
+        
+//            var itemsToShare = [AnyHashable]()
+//            itemsToShare.append(pdfData)
+//            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+//            self.present(controller, animated: true) {() -> Void in }
+            
+            
+            return pdfData
+            
+        }
+        
+        catch {print("error")}
+        
+        return NSMutableData()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+    @objc func callOperator(){
+        if(hasLogged){
+            performSegue(withIdentifier: "callOperator", sender: nil)
+        }
+    }
     
     
     @IBAction func sendMessageButton(_ sender: Any) {
@@ -161,6 +212,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
                         if(res.error == nil){
                             print("Webhookserver Register success")
                             isRegisterdOnWebHookServer = true
+
                         }
                     }
                 }
