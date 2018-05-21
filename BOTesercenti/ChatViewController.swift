@@ -40,8 +40,11 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         sendButton.layer.cornerRadius = 5
 
+        NotificationCenter.default.addObserver(self, selector: #selector (keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
         self.messageTableview.rowHeight = UITableViewAutomaticDimension
         self.messageTableview.estimatedRowHeight = 140
@@ -145,10 +148,15 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     
     @objc func keyboardWillShow(notification: NSNotification) {
         self.view.frame.origin.y -= 250
+        print (self.view.frame.origin.y)
+        print ("--------------------//")
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
+        
             self.view.frame.origin.y += 250
+        print (self.view.frame.origin.y)
+        print ("--------------------//")
         
     }
     
