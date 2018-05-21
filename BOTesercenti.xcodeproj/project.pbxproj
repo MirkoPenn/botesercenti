@@ -23,6 +23,7 @@
 		ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F020B1AFE900B08E2A /* LoginViewController.swift */; };
 		ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB813F120B1AFE900B08E2A /* ChatViewController.swift */; };
 		ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB813F220B1AFE900B08E2A /* Main.storyboard */; };
+		B31EAE9220B2F42C00262B80 /* DocumentComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31EAE9120B2F42C00262B80 /* DocumentComposer.swift */; };
 		B390C4DF20B2A81E00318360 /* Animation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B390C4DD20B2A81E00318360 /* Animation.xcassets */; };
 		B390C4E020B2A81E00318360 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4DE20B2A81E00318360 /* AnimationView.swift */; };
 		B390C4E420B2AA5F00318360 /* PDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		ACB813F020B1AFE900B08E2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACB813F120B1AFE900B08E2A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		ACB813F220B1AFE900B08E2A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B31EAE9120B2F42C00262B80 /* DocumentComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentComposer.swift; sourceTree = "<group>"; };
 		B390C4DD20B2A81E00318360 /* Animation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Animation.xcassets; sourceTree = "<group>"; };
 		B390C4DE20B2A81E00318360 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		10DBFEFD1F3BE35A00209DEC /* BOTesercenti */ = {
 			isa = PBXGroup;
 			children = (
+				B31EAE9120B2F42C00262B80 /* DocumentComposer.swift */,
 				AC06A62B20B2D35400593729 /* CustomPrintPageRenderer.swift */,
 				AC06A62920B2C58A00593729 /* MessageTableCell.swift */,
 				B390C4E220B2AA5F00318360 /* PDF.swift */,
@@ -335,6 +338,7 @@
 				10DBFF321F3BE35A00209DEC /* AppDelegate.swift in Sources */,
 				10372ED2208D6DBA000B9300 /* MessageParser.m in Sources */,
 				10372ED3208D6DBA000B9300 /* NSAttributedString+Extensions.m in Sources */,
+				B31EAE9220B2F42C00262B80 /* DocumentComposer.swift in Sources */,
 				10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */,
 				ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */,
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
