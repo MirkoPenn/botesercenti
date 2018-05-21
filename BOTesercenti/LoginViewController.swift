@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var documentComposer: DocumentComposer!
+    var HTMLContent: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +28,61 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
         botAnimationView.add_2Animation()
+
+          //html
+//        documentComposer = DocumentComposer()
+//        if let invoiceHTML = documentComposer.renderHTML2(){
+//
+//            HTMLContent = invoiceHTML
+//            let pdf = convertHTMLtoPDF(html: HTMLContent)
+//
+//            var itemsToShare = [AnyHashable]()
+//            itemsToShare.append(pdf)
+//            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+//            present(controller, animated: true) {() -> Void in }
+//        }
+    }
+    
+    func convertHTMLtoPDF(html: String) -> NSMutableData {
+        
+        
+        do {
+            
+            let printPageRenderer = CustomPrintPageRenderer()
+            
+            let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+            printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+            
+            let pdfData = NSMutableData()
+            
+            UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+            
+            for i in 0..<printPageRenderer.numberOfPages {
+                UIGraphicsBeginPDFPage()
+                printPageRenderer.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            }
+            
+            UIGraphicsEndPDFContext()
+            
+            var pdfFilename = "pdffile.pdf"
+            pdfData.write(toFile: pdfFilename, atomically: true)
+            
+            print("PDF NAME \(pdfFilename)")
+            
+            //            var itemsToShare = [AnyHashable]()
+            //            itemsToShare.append(pdfData)
+            //            let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            //            self.present(controller, animated: true) {() -> Void in }
+            
+            
+            return pdfData
+            
+        }
+            
+        catch {print("error")}
+        
+        return NSMutableData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
