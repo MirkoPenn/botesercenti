@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E385AC08FCE66374E254665 /* Pods_BOTesercenti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386F6769CE7F355F5DAE6482 /* Pods_BOTesercenti.framework */; };
 		10372ED2208D6DBA000B9300 /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 10372ECA208D6DB9000B9300 /* MessageParser.m */; };
 		10372ED3208D6DBA000B9300 /* NSAttributedString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10372ECF208D6DB9000B9300 /* NSAttributedString+Extensions.m */; };
 		10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 10372ED0208D6DB9000B9300 /* RuntimeHelpers.m */; };
@@ -65,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20D2DF1D1F034A8A00902BF7 /* PushKit.framework in Frameworks */,
+				0E385AC08FCE66374E254665 /* Pods_BOTesercenti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +193,7 @@
 				TargetAttributes = {
 					206281F51ED1782C007E28F9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = EDBXQDU63E;
+						DevelopmentTeam = 6824YNJ23L;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -453,11 +455,11 @@
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDBXQDU63E;
+				DEVELOPMENT_TEAM = 6824YNJ23L;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercentimirko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -475,11 +477,11 @@
 				CODE_SIGN_ENTITLEMENTS = BOTesercenti/BOTesercenti.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDBXQDU63E;
+				DEVELOPMENT_TEAM = 6824YNJ23L;
 				INFOPLIST_FILE = BOTesercenti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercenti1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appleacademy.botesercentimirko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
