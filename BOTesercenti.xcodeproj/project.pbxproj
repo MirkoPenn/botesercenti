@@ -22,6 +22,9 @@
 		ACB813F520B1AFE900B08E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB813F220B1AFE900B08E2A /* Main.storyboard */; };
 		B390C4DF20B2A81E00318360 /* Animation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B390C4DD20B2A81E00318360 /* Animation.xcassets */; };
 		B390C4E020B2A81E00318360 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4DE20B2A81E00318360 /* AnimationView.swift */; };
+		B390C4E420B2AA5F00318360 /* PDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */; };
+		B390C4E520B2AA5F00318360 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E220B2AA5F00318360 /* PDF.swift */; };
+		B390C4E620B2AA5F00318360 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390C4E320B2AA5F00318360 /* PDFTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		ACB813F220B1AFE900B08E2A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B390C4DD20B2A81E00318360 /* Animation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Animation.xcassets; sourceTree = "<group>"; };
 		B390C4DE20B2A81E00318360 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewController.swift; sourceTree = "<group>"; };
+		B390C4E220B2AA5F00318360 /* PDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
+		B390C4E320B2AA5F00318360 /* PDFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewCell.swift; sourceTree = "<group>"; };
 		DB15DCABD7192B62340F0D4E /* Pods-Buddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Buddies/Pods-Buddies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +96,9 @@
 		10DBFEFD1F3BE35A00209DEC /* BOTesercenti */ = {
 			isa = PBXGroup;
 			children = (
+				B390C4E220B2AA5F00318360 /* PDF.swift */,
+				B390C4E320B2AA5F00318360 /* PDFTableViewCell.swift */,
+				B390C4E120B2AA5F00318360 /* PDFTableViewController.swift */,
 				B390C4DD20B2A81E00318360 /* Animation.xcassets */,
 				B390C4DE20B2A81E00318360 /* AnimationView.swift */,
 				10DBFF5E1F3BE3DB00209DEC /* BOTesercenti.entitlements */,
@@ -312,6 +321,8 @@
 			files = (
 				AC06A62820B2896700593729 /* OperatorCallViewController.swift in Sources */,
 				B390C4E020B2A81E00318360 /* AnimationView.swift in Sources */,
+				B390C4E620B2AA5F00318360 /* PDFTableViewCell.swift in Sources */,
+				B390C4E420B2AA5F00318360 /* PDFTableViewController.swift in Sources */,
 				ACB813F320B1AFE900B08E2A /* LoginViewController.swift in Sources */,
 				10DBFF321F3BE35A00209DEC /* AppDelegate.swift in Sources */,
 				10372ED2208D6DBA000B9300 /* MessageParser.m in Sources */,
@@ -319,6 +330,7 @@
 				10372ED4208D6DBA000B9300 /* RuntimeHelpers.m in Sources */,
 				ACB813F420B1AFE900B08E2A /* ChatViewController.swift in Sources */,
 				10372ED5208D6DBA000B9300 /* GTMNSMutableString+HTML.m in Sources */,
+				B390C4E520B2AA5F00318360 /* PDF.swift in Sources */,
 				AC94245320B1CBA30060BDF9 /* KSLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
