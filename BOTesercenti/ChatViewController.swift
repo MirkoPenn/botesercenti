@@ -41,6 +41,9 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call", style: .plain, target: self, action: #selector(callOperator))
+
         chatView.isHidden = true
         tableview.delegate = self
         tableview.dataSource = self
@@ -73,14 +76,16 @@ class ChatViewController: UIViewController, UITextFieldDelegate,UITableViewDeleg
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+    @objc func callOperator(){
+        
+        performSegue(withIdentifier: "callOperator", sender: nil)
+    }
     
     
     @IBAction func sendMessageButton(_ sender: Any) {

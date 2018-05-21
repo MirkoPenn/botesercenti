@@ -110,9 +110,6 @@
                                         <rect key="frame" x="329" y="8" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Call"/>
-                                        <connections>
-                                            <segue destination="ixn-iS-MZy" kind="show" id="hjp-S0-b8c"/>
-                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mm8-UO-IYL">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
@@ -141,6 +138,7 @@
                         <outlet property="chatView" destination="o1w-SV-qJm" id="sbe-6n-olZ"/>
                         <outlet property="tableview" destination="mm8-UO-IYL" id="CTl-V3-Aw5"/>
                         <outlet property="textField" destination="WcP-76-G7i" id="Tjg-C7-8cO"/>
+                        <segue destination="ixn-iS-MZy" kind="show" identifier="callOperator" id="sxB-Ln-x8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4T-7F-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,6 +288,6 @@
         <image name="closeCall" width="276" height="276"/>
         <image name="history" width="120" height="118"/>
         <image name="mute" width="475" height="483"/>
-        <image name="operatoreBlur" width="753" height="849"/>
+        <image name="operatoreBlur" width="376" height="424"/>
     </resources>
 </document>
