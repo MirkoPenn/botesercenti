@@ -18,6 +18,8 @@ class OperatorCallViewController: UIViewController {
     
     var callTimer: Timer?
     
+    var blurEffectView: UIVisualEffectView?
+    
     @IBOutlet weak var callLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -26,12 +28,16 @@ class OperatorCallViewController: UIViewController {
     
     @IBOutlet weak var disconnectButton: UIButton!
     
+    @IBOutlet weak var contactImage: UIImageView!
+    
+    @IBOutlet weak var muteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.timeLabel.text = ""
         
-        self.disconnectButton.isHidden = true
+        self.muteButton.isHidden = true
         
         sparkSDK?.phone.dial("mirko@pennone.org", option: MediaOption.audioOnly(), completionHandler: { (result) in
             
@@ -53,10 +59,15 @@ class OperatorCallViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         if let _ = currentCall {
             endCall(currentCall!)
         }
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     @objc func updateTimer(){
@@ -85,8 +96,10 @@ class OperatorCallViewController: UIViewController {
             print("Call ======= > Connected")
             
             self?.activityIndicator.isHidden = true
-            self?.callLabel.text = "Connected"
+            self?.blurEffectView?.isHidden = true
+            self?.callLabel.text = "Operator"
             self?.timeLabel.text = "00:00"
+            self?.muteButton.isHidden = false
             self?.callTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self?.updateTimer), userInfo: nil, repeats: true)
             self?.disconnectButton.isHidden = false
             
@@ -181,6 +194,10 @@ class OperatorCallViewController: UIViewController {
     
     func endCall(_ call: Call, _ endReason: String? = nil){
         let isCurrentCall = (call.uuid.uuidString == self.currentCall?.uuid.uuidString)
+        
+        self.muteButton.isHidden = true
+        callLabel.text = "Disconnecting..."
+        
         if call.status == .connected {
             if(isCurrentCall){
                 print(endReason)
@@ -202,7 +219,7 @@ class OperatorCallViewController: UIViewController {
 //                    self.dismiss(animated: true, completion: {})
                     print("Call rejected.")
                     self.callTimer?.invalidate()
-                    self.callLabel.text = "Disconnected"
+                    self.callLabel.text = "Disconnected..."
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.popOverDisconnected), userInfo: nil, repeats: false)
                 }
             })
@@ -218,9 +235,22 @@ class OperatorCallViewController: UIViewController {
     @IBAction func onDisconnectButton(_ sender: Any) {
         if let _ = currentCall {
             endCall(currentCall!)
+        } else {
+            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.popOverDisconnected), userInfo: nil, repeats: false)
         }
         
     }
+    
+    @IBAction func onMuteButton(_ sender: Any) {
+        if let _ = currentCall {
+            if (currentCall?.sendingAudio)!{
+                currentCall?.sendingAudio = false
+            } else {
+                currentCall?.sendingAudio = true
+            }
+        }
+    }
+    
     
 
     /*

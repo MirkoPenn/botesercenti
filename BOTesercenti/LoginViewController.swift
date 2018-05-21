@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
         historyButton.isHidden = false
         activityIndicator.isHidden = true
         self.navigationController?.navigationBar.isHidden = true
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
